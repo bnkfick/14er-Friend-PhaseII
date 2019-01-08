@@ -1,0 +1,288 @@
+<section>
+        <div id="table-list" class="container">       
+            <table class="table table-striped table-light">
+                <thead class="thead-dark">
+                    <tr>
+                        <th class="th-sm">Favorite</th>
+                        <th class="th-sm">Rank</th>
+                        <th class="th-lg">Mountain</th>
+                        <th class="th-lg">Elevation</th>
+                        <th class="th-md">Wind</th><!--(Weather API) mph -->
+                        <th class="th-md">Temp</th><!--(Weather API) Air temp at 14,000ft-->
+                        <th class="th-md">Dist</th><!--(Google Maps) Distance from User-->
+                        <th class="th-lg">Directions</th><!--Google Link-->
+                        <th class="th-sm"></th>
+                    </tr>
+                </thead>
+            </table>
+
+            <!--Mtn-X-Table **Dynamially render mtn-# based on array-->
+            <table id="mtn-1" class="table table-striped table-light">
+                <thead class="thead-dark thead-hide">
+                    <tr>
+                        <th class="th-sm">Favorite</th>
+                        <th class="th-sm">Rank</th>
+                        <th class="th-lg">Mountain</th>
+                        <th class="th-lg">Elevation</th>
+                        <th class="th-md">Wind</th><!--(Weather API) mph -->
+                        <th class="th-md">Temp</th><!--(Weather API) Air temp at 14,000ft-->
+                        <th class="th-md">Dist</th><!--(Google Maps) Distance from User-->
+                        <th class="th-lg">Directions</th><!--Google Link-->
+                        <th class="th-sm"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="mtn-1-conditions"><!--turn background color of entire row green, yellow, or red depending on conditional params-->
+                        <td><i value="false" class="favorite far fa-heart fa-2x"></i></td>
+                        <td class="rank">10</td>
+                        <td id="name">Long's Peak</td>
+                        <td id="elevation">14,000</td>
+                        <td id="windspeed">60mph</td> <!--dynamic-->
+                        <td id="temp">10F</td> <!--dynamic-->
+                        <td id="distance">180mi</td><!--@Brayden-->
+                        <td class="map"><a href=#>Link</a></td><!--.attr(data-target, #route-table-i-->
+                        <td ><i role="button" id="plus-btn" class="fas fa-plus-square fa-minus-square fa-2x"></i></td>
+                    </tr>
+
+
+                    <!-- Routes sub-Table -->
+                    <tr>
+                        <td colspan="9">
+                            <div id="mtn-1-routes" class="routes-table">
+                                <table class="table table-striped table-light">      
+                                    <thead class="thead-green">
+                                        <tr>
+                                            <th class="th-xl">Route Name</th>
+                                            <th class="th-md">Mileage</th>
+                                            <th class="th-md">Gain (ft.)</th>
+                                            <th class="th-md">Difficulty</th>
+                                            <th class="th-lg">Exposure</th>
+                                            <th class="th-md">Route Beta</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!--Dynamically render route #-->
+                                        <tr id="route-1">
+                                            <td class="route-name">Route 1</td>
+                                            <td class="route-mileage">12</td>
+                                            <td class="route-gain">3500</td>
+                                            <td class="route-difficulty"><i class="fas fa-circle fa-2x"></i></td>
+                                            <td class="route-exposure">Class 1</td>
+                                            <td class="route-description"><i id="beta-btn" class="fas fa-map-marked-alt fa-map-marked fa-2x"></i></td>
+                                        </tr>
+                                        
+                                        <!--Route Map and Description View-->
+                                        <tr >
+                                            <td colspan="6">
+                                                <div id="route-1-beta" class="row route-beta">
+                                                    <div class="col-md-7"><!--@Brayden-->
+                                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24597.817441012663!2d-105.66133819306746!3d39.58829863606427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876ba9ca85fb4895%3A0xefa49d55b6cbb1b1!2sMt+Evans!5e0!3m2!1sen!2sus!4v1543554572340" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <h5>Route Description:</h5>
+                                                        <p>
+                                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptatem vitae, sunt provident illum dolorum impedit libero quos deserunt repellat reiciendis delectus, consequatur alias asperiores minus architecto earum. Ipsum, libero.
+                                                        </p>
+                                                        <h5>User Comments</h5>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr><!--End Route Map and Description-->
+                                        
+                                        <tr id="route-2">
+                                            <td id="route-name">Route 2</td>
+                                            <td id="route-mileage">6</td>
+                                            <td id="route-gain">6500</td>
+                                            <td id="route-difficulty"><i class="fas fa-square fa-2x"></i></td>
+                                            <td id="route-exposure">Class 2</td>
+                                            <td id="route-description"><i id="beta-btn" class="fas fa-map-marked-alt fa-map-marked fa-2x"></i></td>
+                                        </tr>
+                                        
+                                        <!--Route Map and Description View-->
+                                        <tr>
+                                            <td colspan="6">
+                                                <div id="route-2-beta" class="row route-beta">
+                                                    <div class="col-md-7">
+                                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24597.817441012663!2d-105.66133819306746!3d39.58829863606427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876ba9ca85fb4895%3A0xefa49d55b6cbb1b1!2sMt+Evans!5e0!3m2!1sen!2sus!4v1543554572340" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <h5>Route Description:</h5>
+                                                        <p>
+                                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptatem vitae, sunt provident illum dolorum impedit libero quos deserunt repellat reiciendis delectus, consequatur alias asperiores minus architecto earum. Ipsum, libero.
+                                                        </p>
+                                                        <h5>User Comments</h5>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr><!--End Route Map and Description-->
+                                        
+                                        <tr id="route-3">
+                                            <td id="route-name">Route 3</td>
+                                            <td id="route-mileage">6</td>
+                                            <td id="route-gain">6500</td>
+                                            <td id="route-difficulty"><i class="fas fa-mountain fa-2x"></i></td>
+                                            <td id="route-exposure"> Class 3</td>
+                                            <td id="route-description"><i id="beta-btn" class="fas fa-map-marked-alt fa-map-marked fa-2x"></i></td>
+                                        </tr>
+                                        
+                                        <!--Route Map and Description View-->
+                                        <tr >
+                                            <td colspan="6">
+                                                <div id="route-3-beta" class="row route-beta">
+                                                    <div class="col-md-7">
+                                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24597.817441012663!2d-105.66133819306746!3d39.58829863606427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876ba9ca85fb4895%3A0xefa49d55b6cbb1b1!2sMt+Evans!5e0!3m2!1sen!2sus!4v1543554572340" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <h5>Route Description:</h5>
+                                                        <p>
+                                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptatem vitae, sunt provident illum dolorum impedit libero quos deserunt repellat reiciendis delectus, consequatur alias asperiores minus architecto earum. Ipsum, libero.
+                                                        </p>
+                                                        <h5>User Comments</h5>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr><!--End Route Map and Description-->
+                                    </tbody>
+                                </table><!--End #route-table-->
+                            </div><!--End Mtn Routes-->
+                        </td>
+                    </tr><!--End Routes sub-Table-->
+                </tbody><!--End Mtn-X-body-->
+            </table><!--End Mtn-X-table-->
+            
+            <!--Mtn-X-Table **Dynamially render mtn-# based on array-->
+            <table id="mtn-1" class="table table-striped table-light">
+                    <thead class="thead-dark thead-hide">
+                        <tr>
+                            <th class="th-sm">Favorite</th>
+                            <th class="th-sm">Rank</th>
+                            <th class="th-lg">Mountain</th>
+                            <th class="th-lg">Elevation</th>
+                            <th class="th-md">Wind</th><!--(Weather API) mph -->
+                            <th class="th-md">Temp</th><!--(Weather API) Air temp at 14,000ft-->
+                            <th class="th-md">Dist</th><!--(Google Maps) Distance from User-->
+                            <th class="th-lg">Directions</th><!--Google Link-->
+                            <th class="th-sm"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="mtn-1-conditions"><!--turn background color of entire row green, yellow, or red depending on conditional params-->
+                            <td><i value="false" class="favorite far fa-heart fa-2x"></i></td>
+                            <td class="rank">10</td>
+                            <td id="name">Long's Peak</td>
+                            <td id="elevation">14,000</td>
+                            <td id="windspeed">60mph</td> <!--dynamic-->
+                            <td id="temp">10F</td> <!--dynamic-->
+                            <td id="distance">180mi</td><!--@Brayden-->
+                            <td class="map"><a href=#>Link</a></td><!--.attr(data-target, #route-table-i-->
+                            <td ><i role="button" id="plus-btn" class="fas fa-plus-square fa-minus-square fa-2x"></i></td>
+                        </tr>
+    
+    
+                        <!-- Routes sub-Table -->
+                        <tr>
+                            <td colspan="9">
+                                <div id="mtn-1-routes" class="routes-table">
+                                    <table class="table table-striped table-light">      
+                                        <thead class="thead-green">
+                                            <tr>
+                                                <th class="th-xl">Route Name</th>
+                                                <th class="th-md">Mileage</th>
+                                                <th class="th-md">Gain (ft.)</th>
+                                                <th class="th-md">Difficulty</th>
+                                                <th class="th-lg">Exposure</th>
+                                                <th class="th-md">Route Beta</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!--Dynamically render route #-->
+                                            <tr id="route-1">
+                                                <td class="route-name">Route 1</td>
+                                                <td class="route-mileage">12</td>
+                                                <td class="route-gain">3500</td>
+                                                <td class="route-difficulty"><i class="fas fa-circle fa-2x"></i></td>
+                                                <td class="route-exposure">Class 1</td>
+                                                <td class="route-description"><i id="beta-btn" class="fas fa-map-marked-alt fa-map-marked fa-2x"></i></td>
+                                            </tr>
+                                            
+                                            <!--Route Map and Description View-->
+                                            <tr >
+                                                <td colspan="6">
+                                                    <div id="route-1-beta" class="row route-beta">
+                                                        <div class="col-md-7"><!--@Brayden-->
+                                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24597.817441012663!2d-105.66133819306746!3d39.58829863606427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876ba9ca85fb4895%3A0xefa49d55b6cbb1b1!2sMt+Evans!5e0!3m2!1sen!2sus!4v1543554572340" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <h5>Route Description:</h5>
+                                                            <p>
+                                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptatem vitae, sunt provident illum dolorum impedit libero quos deserunt repellat reiciendis delectus, consequatur alias asperiores minus architecto earum. Ipsum, libero.
+                                                            </p>
+                                                            <h5>User Comments</h5>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr><!--End Route Map and Description-->
+                                            
+                                            <tr id="route-2">
+                                                <td id="route-name">Route 2</td>
+                                                <td id="route-mileage">6</td>
+                                                <td id="route-gain">6500</td>
+                                                <td id="route-difficulty"><i class="fas fa-square fa-2x"></i></td>
+                                                <td id="route-exposure">Class 2</td>
+                                                <td id="route-description"><i id="beta-btn" class="fas fa-map-marked-alt fa-map-marked fa-2x"></i></td>
+                                            </tr>
+                                            
+                                            <!--Route Map and Description View-->
+                                            <tr>
+                                                <td colspan="6">
+                                                    <div id="route-2-beta" class="row route-beta">
+                                                        <div class="col-md-7">
+                                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24597.817441012663!2d-105.66133819306746!3d39.58829863606427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876ba9ca85fb4895%3A0xefa49d55b6cbb1b1!2sMt+Evans!5e0!3m2!1sen!2sus!4v1543554572340" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <h5>Route Description:</h5>
+                                                            <p>
+                                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptatem vitae, sunt provident illum dolorum impedit libero quos deserunt repellat reiciendis delectus, consequatur alias asperiores minus architecto earum. Ipsum, libero.
+                                                            </p>
+                                                            <h5>User Comments</h5>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr><!--End Route Map and Description-->
+                                            
+                                            <tr id="route-3">
+                                                <td id="route-name">Route 3</td>
+                                                <td id="route-mileage">6</td>
+                                                <td id="route-gain">6500</td>
+                                                <td id="route-difficulty"><i class="fas fa-mountain fa-2x"></i></td>
+                                                <td id="route-exposure"> Class 3</td>
+                                                <td id="route-description"><i id="beta-btn" class="fas fa-map-marked-alt fa-map-marked fa-2x"></i></td>
+                                            </tr>
+                                            
+                                            <!--Route Map and Description View-->
+                                            <tr >
+                                                <td colspan="6">
+                                                    <div id="route-3-beta" class="row route-beta">
+                                                        <div class="col-md-7">
+                                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24597.817441012663!2d-105.66133819306746!3d39.58829863606427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876ba9ca85fb4895%3A0xefa49d55b6cbb1b1!2sMt+Evans!5e0!3m2!1sen!2sus!4v1543554572340" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <h5>Route Description:</h5>
+                                                            <p>
+                                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptatem vitae, sunt provident illum dolorum impedit libero quos deserunt repellat reiciendis delectus, consequatur alias asperiores minus architecto earum. Ipsum, libero.
+                                                            </p>
+                                                            <h5>User Comments</h5>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr><!--End Route Map and Description-->
+                                        </tbody>
+                                    </table><!--End #route-table-->
+                                </div><!--End Mtn Routes-->
+                            </td>
+                        </tr><!--End Routes sub-Table-->
+                    </tbody><!--End Mtn-X-body-->
+            </table><!--End Mtn-X-table-->
+                    
+        </div><!--End Table-List Container-->
+    </section>
