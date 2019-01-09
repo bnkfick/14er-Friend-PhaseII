@@ -1,0 +1,94 @@
+.user-box {
+    width: 100%;
+    text-align: right;
+    float:right;
+    border: solid 1px #eee;
+    background-color: #fdfdfe;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+.msgDiv {
+    padding: 5px;
+    line-height: 1.5;
+}
+#greeting {
+    float: left;
+    font-size:1.5em;
+    padding-left: 10px;
+}
+#btnLogout {
+    margin-bottom: 10px;
+
+}
+
+#login, #loggedIn {
+    border-radius: 5px;
+    padding: 10px;
+    vertical-align: center;
+    display: none;
+}
+#preferences {
+    clear: both;
+    text-align: left;
+    background-color: #eee;
+    border-top: solid 1px gray;
+    padding: 10px;
+    display: none;
+}
+.formcell, singlecell {
+    float: left;
+    width: 50%;
+    padding-left: 10px;
+}
+.singlecell {
+    width: 100%;
+}
+.singlecell label {
+    padding-left:12px;
+    margin-right:4px;
+    width: 25%;
+}
+label {
+    width: 50%;
+}
+input[type=text] { 
+    width: 400px;
+}
+input[type=number] { 
+    width: 50px;
+}
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+/* Login Style----------- */
+.user-box {
+    width: 100%;
+    /* text-align: right; */
+    /* float:right; */
+    background-color: rgba(19, 18, 18, 0.671);
+    /* Experimental Feature must be turned on in chrome://flags/
+        -->Experimental Web Platform Features */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    /* border: 5px solid #f4f8f780; */
+    /* margin-bottom: 50px; */
+    padding: 1.5em;
+    color: whitesmoke
+}
+
+#preferences {
+    width: 100%;
+    /* text-align: right; */
+    /* float:right; */
+    background-color: rgba(19, 18, 18, 0.671);
+    /* Experimental Feature must be turned on in chrome://flags/
+        -->Experimental Web Platform Features */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    /* border: 5px solid #f4f8f780; */
+    /* margin-bottom: 50px; */
+    padding: 1.5em;
+    color: whitesmoke
+}
