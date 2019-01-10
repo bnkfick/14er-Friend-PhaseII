@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: arial;
+            margin: 0;
+        }
+
+        nav {
+            background: rgba(19, 18, 18, 0.671);
+            padding: 20px 10px;
+        }
+
+        nav ul {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        nav li {
+            list-style-type: none;
+            display: inline-block;
+            margin: 0 10px 0 0;
+        }
+
+        nav a {
+            color: #fff;
+            font-size: 18px;
+            background: rgba(255, 255, 255, 0.2);
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+
+        main,
+        header {
+            max-width: 960px;
+            margin: 30px auto;
+            padding: 0 10px;
+            color: #333;
+        }
+
+        .google-btn {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            background: #ff5353;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/logout">Logout</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/">Homepage</a></li>
+        </ul>
+    </nav>
+    <p>Use templating logic to show/hide the appropriate buttons. </p>
+
+    <p>Login redirects to profile.</p>
+    <p>Profile will redirect to home page.</p>
+    <p>Login will redirect to home page.</p>
+    <header>
+        <h1>Login using google</h1>
+    </header>
+    <main>
+        <a class="google-btn" href="/google">Google+</a>
+    </main>
+</body>
+
+</html>
