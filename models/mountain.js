@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
-    var Mtn = sequelize.define("Mtn", {
-      mtn_name: {
+    var Mountain = sequelize.define("Mountain", {
+      peakName: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -9,9 +9,12 @@ module.exports = function(sequelize, DataTypes) {
       },
       rank: {
         type: DataTypes.INTEGER,
-        defaultValue: false
+        allowNull: false,
+        validate: {
+          len: [1]
+        }
       }
-    });
+    }); 
 
 /*     Mtn.associate = function (models) {
       Mtn.belongsTo(models.Routes, { 

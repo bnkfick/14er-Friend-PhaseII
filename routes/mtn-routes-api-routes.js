@@ -13,27 +13,27 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the routes of a mountain
-  app.get("/api/mountain-routes/", function(req, res) {
-    db.Route.findAll({})
-      .then(function(dbRoute) {
-        res.json(dbRoute);
+  app.get("/api/mountain_routes/", function(req, res) {
+    db.Mountain_route.findAll({})
+      .then(function(dbMountain_route) {
+        res.json(dbMountain_route);
       });
   });
 
   // Get route for returning specific mtn-route
   app.get("/api/mountain-routes/:name", function(req, res) {
-    db.Mountain.findAll({
+    db.Mountain.findOne({
       where: {
-        name: req.params.name
+        routeName: req.params.name
       }
     })
-      .then(function(dbMountain) {
-        res.json(dbMountain);
+      .then(function(dbMountain_route) {
+        res.json(dbMountain_route);
       });
   });
     
  // PUT route for updating mountains on admin page. Yes! Change code
-//   app.put("/api/posts", function(req, res) {
+//   app.put("/api/mountains", function(req, res) {
 //     db.Post.update(req.body,
 //       {
 //         where: {
