@@ -1,0 +1,80 @@
+<section>
+        <div id="table-list" class="container">
+            <table id="mtn-render" class="table glass">
+                <thead class="thead-dark">
+                    <tr>
+                        <th class="th-sm align-middle">Favorite</th>
+                        <th class="th-sm align-middle">Rank</th>
+                        <th class="th-md align-middle">Mountain</th>
+                        <th class="th-md align-middle">Elevation</th>
+                        <th class="th-md align-middle">Wind Direction</th>
+                        <th class="th-md align-middle">Wind Speed</th>
+                        <th class="th-md align-middle">Current Temp</th>
+                        <th class="th-md align-middle">Short Forecast</th>
+                        <th class="th-md align-middle">Distance to You</th>
+                        <th class="th-sm"></th>
+                    </tr>
+                </thead>
+            </table>
+            <!--Mtn-X-Table **Dynamially render mtn-# based on array-->
+            <table id="mtn-i" class="mtn-template table glass">
+                <thead class="thead-dark thead-hide">
+                    <tr>
+                        <th class="th-sm">Favorite</th>
+                        <th class="th-sm">Rank</th>
+                        <th class="th-md">Mountain</th>
+                        <th class="th-md">Elevation</th>
+                        <th class="th-md">Wind Direction</th>
+                        <th class="th-md">Wind Speed</th>
+                        <th class="th-md">Current Temp</th>
+                        <th class="th-md">Short Forecast</th>
+                        <th class="th-md">Distance to You</th>
+                        <th class="th-sm"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="conditions">
+                        <!--turn background color of entire row green, yellow, or red depending on conditional params-->
+                        <td class="align-middle"><i value="false" class="favorite far fa-heart fa-2x"></i></td>
+                        <td class="rank align-middle"></td>
+                        <td class="name align-middle"></td>
+                        <td class="elevation align-middle"></td>
+                        <td id="mtn-i-wind-direction" class="wind-direction align-middle"></td>
+                        <td id="mtn-i-wind" class="windspeed align-middle"></td>
+                        <td id="mtn-i-temperature" class="temperature align-middle"></td>
+                        <td id="mtn-1-short-forecast" class="short-forecast align-middle"></td>
+                        <td class="distance align-middle">180mi</td>
+                        <td class="align-middle"><i role="button" id="plus-btn" class="fas fa-plus-square fa-minus-square fa-2x"></i></td>
+                    </tr>
+
+
+                    <!-- Routes sub-Table -->
+                    <tr>
+                        <td colspan="9">
+                            <div id="routes" class="routes-table">
+                                <table id="route-render" class="table sub-table">
+                                    <thead class="thead-gray sub-table">
+                                        <tr>
+                                            <th class="th-xl">Route Name</th>
+                                            <th class="th-md">Mileage</th>
+                                            <th class="th-md">Gain (ft.)</th>
+                                            <th class="th-md">Difficulty</th>
+                                            <th class="th-lg">Fall Exposure</th>
+                                            <th class="th-md">Route Beta</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <!--End Routes sub-Table-->
+                </tbody>
+                <!--End Mtn-X-body-->
+            </table>
+
+            <!--mtn-routes-table is nested in mtn-table via JQuery-->
+            <% include ../partials/mtn-routes-table%>
+        </div>
+        <!--End Table-List Container-->
+    </section>

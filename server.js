@@ -28,6 +28,9 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 
+//set view engine to ejs
+app.set('view engine', 'ejs');
+
 // set up session cookies
 app.use(cookieSession({
   maxAge: 24 * 60 * 60 * 1000,
@@ -40,6 +43,8 @@ app.use(passport.session());
 
 // set up routes
 app.use('/auth', authRoutes);
+
+
 // Routes
 // =============================================================
 require("./routes/html-routes.js")(app);

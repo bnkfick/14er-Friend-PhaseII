@@ -1,0 +1,65 @@
+<!--Login and Preferences-->
+<!--Log In Section----------------------------------------->
+    <section>
+        <div class="container">
+            <div class="user-box">
+
+                <div class="msgDiv"></div>
+                <div id="login">
+                    <input id="txtEmail" type="email" placeholder="Email">
+                    <input id="txtPassword" type="password" placeholder="Password">
+
+                    <button id="btnLogin" class="btn btn-primary btn-action">
+                        Log In
+                    </button>
+                    <button id="btnSignUp" class="btn btn-secondary">
+                        Sign Up
+                    </button>
+                </div>
+                <div id="loggedIn">
+                    <div id="greeting">Hello </div>
+                    <button id="btnLogout" class="btn btn-primary btn-action">
+                        Log Out
+                    </button>
+                    User Info
+                    <i role="button" id="show-preferences" class="fas fa-plus-square fa-minus-square fa-2x"></i>
+                </div>
+
+                <div id="preferences" class="clearfix" data-id=''>
+                    <div id="updateMsg"> </div>
+                    <h4>Preferred Climbing Conditions</h4>
+                    <form>
+                        <div class="singlecell">
+                            <label for="user-name-input">Name</label>
+                            <input id="user-name-input" type="text">
+                        </div>
+                        <div class="formcell">
+                            <label for="wind-input">Wind Speed Below</label>
+                            <input id="wind-input" type="number">
+                        </div>
+                        <div class="formcell">
+                            <label for="precipitation-input">% Chance of Precipitation &lt;</label>
+                            <input id="precipitation-input" type="number">
+                        </div>
+                        <div class="formcell">
+                            <label for="temperature-min-input">Temperature Min</label>
+                            <input id="temperature-min-input" type="number">
+                        </div>
+                        <div class="formcell">
+                            <label for="temperature-max-input">Temperature Max</label>
+                            <input id="temperature-max-input" type="number">
+                        </div>
+
+                        <button class="btn btn-primary float-left" id="favorites-filter-btn">Favorites</button>
+                        <button class="btn btn-success float-left" id="wind-speed-filter-btn">Wind</button>
+                        <!-- <button class="btn btn-danger float-left" id="rank-filter-btn">Rank</button>
+                        <button class="btn btn-primary float-left" id="user-preferences-btn">Distance</button> -->
+                        <button class="btn btn-primary float-right" id="user-preferences-btn">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!--End Log-In Container-->
+    </section>
+    <!--End Log In Section-->
