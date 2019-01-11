@@ -45,17 +45,35 @@ h1 {
 .white {
     color: whitesmoke;
 }
+.bg-white {
+    background-color: whitesmoke;
+}
 .red {
     color: #ED463A;
+}
+.bg-red {
+    background-color: #ED463A;
 }
 .yellow {
     color: #ECBF2F;
 }
+.bg-yellow {
+    background-color: #ECBF2F;
+}
 .blue {
     color: #538D9F;
 }
+.bg-blue {
+    background-color: #538D9F;
+}
+/* Padding Classes*/
+.ptb-25{
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+}
 
 /* Margin Classes */
+
 .mt-1{
     margin-top: 1rem;
 }
