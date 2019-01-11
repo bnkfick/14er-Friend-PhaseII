@@ -13,15 +13,36 @@ module.exports = function(sequelize, DataTypes) {
         validate: {
           len: [1]
         }
-      }
-    }); 
-
-/*     Mtn.associate = function (models) {
-      Mtn.belongsTo(models.Routes, { 
-        foreignKey: {
-          allowNull: false
+      },
+      elevation: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          len: [1,16]
         }
-      });
-    } */
-    return Mtn;
+      },
+      latitude: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
+        validate: {
+          len: [1,16]
+        }
+      },
+      longitude: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
+        validate: {
+          len: [1,16]
+        }
+      },
+      mountainRange: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [1,140]
+        }
+      }
+    });
+
+    return Mountain;
   };
