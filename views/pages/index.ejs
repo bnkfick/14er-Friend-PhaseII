@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <!-- All the usuall head stuff including CSS files -->
     <% include ../partials/head %>
 </head>
 
@@ -16,238 +17,22 @@
         }(document, 'script', 'facebook-jssdk'));
     </script>
     <header>
+        <!--Navigation Bar -->
         <% include ../partials/header %>
     </header>
+    
+    <!-- User login & Set Preferences -->
+    <% include ../partials/user-box%>
 
-    <!--Log In Section----------------------------------------->
-    <section>
-        <div class="container">
-            <div class="user-box">
-
-                <div class="msgDiv"></div>
-                <div id="login">
-                    <input id="txtEmail" type="email" placeholder="Email">
-                    <input id="txtPassword" type="password" placeholder="Password">
-
-                    <button id="btnLogin" class="btn btn-primary btn-action">
-                        Log In
-                    </button>
-                    <button id="btnSignUp" class="btn btn-secondary">
-                        Sign Up
-                    </button>
-                </div>
-                <div id="loggedIn">
-                    <div id="greeting">Hello </div>
-                    <button id="btnLogout" class="btn btn-primary btn-action">
-                        Log Out
-                    </button>
-                    User Info
-                    <i role="button" id="show-preferences" class="fas fa-plus-square fa-minus-square fa-2x"></i>
-                </div>
-
-                <div id="preferences" class="clearfix" data-id=''>
-                    <div id="updateMsg"> </div>
-                    <h4>Preferred Climbing Conditions</h4>
-                    <form>
-                        <div class="singlecell">
-                            <label for="user-name-input">Name</label>
-                            <input id="user-name-input" type="text">
-                        </div>
-                        <div class="formcell">
-                            <label for="wind-input">Wind Speed Below</label>
-                            <input id="wind-input" type="number">
-                        </div>
-                        <div class="formcell">
-                            <label for="precipitation-input">% Chance of Precipitation &lt;</label>
-                            <input id="precipitation-input" type="number">
-                        </div>
-                        <div class="formcell">
-                            <label for="temperature-min-input">Temperature Min</label>
-                            <input id="temperature-min-input" type="number">
-                        </div>
-                        <div class="formcell">
-                            <label for="temperature-max-input">Temperature Max</label>
-                            <input id="temperature-max-input" type="number">
-                        </div>
-
-                        <button class="btn btn-primary float-left" id="favorites-filter-btn">Favorites</button>
-                        <button class="btn btn-success float-left" id="wind-speed-filter-btn">Wind</button>
-                        <!-- <button class="btn btn-danger float-left" id="rank-filter-btn">Rank</button>
-                        <button class="btn btn-primary float-left" id="user-preferences-btn">Distance</button> -->
-                        <button class="btn btn-primary float-right" id="user-preferences-btn">Save</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        </div>
-        <!--End Log-In Container-->
-    </section>
-    <!--End Log In Section-->
-
-
-
-
-
-
-
-    <!--Mtn Table Section--------------------------------------------------------------->
-    <!--End Table-List Section---------------------------------------->
-
-
-
-    <!--Adam's Sandbox  --------------------------------------------------------------->
-    <section>
-        <div id="table-list" class="container">
-            <table id="mtn-render" class="table glass">
-                <thead class="thead-dark">
-                    <tr>
-                        <th class="th-sm align-middle">Favorite</th>
-                        <th class="th-sm align-middle">Rank</th>
-                        <th class="th-md align-middle">Mountain</th>
-                        <th class="th-md align-middle">Elevation</th>
-                        <th class="th-md align-middle">Wind Direction</th>
-                        <th class="th-md align-middle">Wind Speed</th>
-                        <th class="th-md align-middle">Current Temp</th>
-                        <th class="th-md align-middle">Short Forecast</th>
-                        <th class="th-md align-middle">Distance to You</th>
-                        <!--(Google Maps) Distance from User-->
-                        <!-- <th class="th-lg">Directions</th> -->
-                        <th class="th-sm"></th>
-                    </tr>
-                </thead>
-            </table>
-            <!--Mtn-X-Table **Dynamially render mtn-# based on array-->
-
-
-            <table id="mtn-i" class="mtn-template table glass">
-                <thead class="thead-dark thead-hide">
-                    <tr>
-                        <th class="th-sm">Favorite</th>
-                        <th class="th-sm">Rank</th>
-                        <th class="th-md">Mountain</th>
-                        <th class="th-md">Elevation</th>
-                        <th class="th-md">Wind Direction</th>
-                        <th class="th-md">Wind Speed</th>
-                        <th class="th-md">Current Temp</th>
-                        <th class="th-md">Short Forecast</th>
-                        <th class="th-md">Distance to You</th>
-                        <th class="th-sm"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr id="conditions">
-                        <!--turn background color of entire row green, yellow, or red depending on conditional params-->
-                        <td class="align-middle"><i value="false" class="favorite far fa-heart fa-2x"></i></td>
-                        <td class="rank align-middle"></td>
-                        <td class="name align-middle"></td>
-                        <td class="elevation align-middle"></td>
-                        <td id="mtn-i-wind-direction" class="wind-direction align-middle"></td>
-                        <td id="mtn-i-wind" class="windspeed align-middle"></td>
-                        <td id="mtn-i-temperature" class="temperature align-middle"></td>
-                        <td id="mtn-1-short-forecast" class="short-forecast align-middle"></td>
-                        <td class="distance align-middle">180mi</td>
-                        <td class="align-middle"><i role="button" id="plus-btn" class="fas fa-plus-square fa-minus-square fa-2x"></i></td>
-                    </tr>
-
-
-                    <!-- Routes sub-Table -->
-                    <tr>
-                        <td colspan="9">
-                            <div id="routes" class="routes-table">
-                                <table id="route-render" class="table sub-table">
-                                    <thead class="thead-gray sub-table">
-                                        <tr>
-                                            <th class="th-xl">Route Name</th>
-                                            <th class="th-md">Mileage</th>
-                                            <th class="th-md">Gain (ft.)</th>
-                                            <th class="th-md">Difficulty</th>
-                                            <th class="th-lg">Fall Exposure</th>
-                                            <th class="th-md">Route Beta</th>
-                                        </tr>
-                                    </thead>
-                                </table>
-
-                            </div>
-                        </td>
-                    </tr>
-                    <!--End Routes sub-Table-->
-                </tbody>
-                <!--End Mtn-X-body-->
-            </table>
-            <!--End Mtn-X-table-->
-
-            <!--Route Table Template-->
-            <table id="route-i" class="route-template table sub-table">
-                <thead class="thead-gray thead-hide">
-                    <tr>
-                        <th class="th-xl">Route Name</th>
-                        <th class="th-md">Mileage</th>
-                        <th class="th-md">Gain (ft.)</th>
-                        <th class="th-md">Difficulty</th>
-                        <th class="th-lg">Fall Exposure</th>
-                        <th class="th-md">Route Beta</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!--Dynamically render route #-->
-                    <tr>
-                        <td class="route-name"></td>
-                        <td class="route-mileage"></td>
-                        <td class="route-gain"></td>
-                        <td class="route-difficulty"></td>
-                        <td class="route-exposure">
-                            <div class="progress" style="height:2.5em">
-                                <div class="bg-success progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                                    style="width: 25%">LOW</div>
-                            </div>
-                        </td>
-                        <td class="route-description"><i id="beta-btn" class="fas fa-map-marked-alt fa-map-marked fa-2x"></i></td>
-                    </tr>
-
-
-                    <!--Route Map and Description View-->
-                    <tr>
-                        <td colspan="6">
-                            <div id="route-x-beta" class="row route-beta">
-                                <div class="col-md-7 routeMapEmbed">
-                                    <!--renderTable.js 112-->
-                                </div>
-                                <div class="col-md-5">
-                                    <h5>Route Description:</h5>
-                                    <p>
-                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptatem
-                                        vitae, sunt provident illum dolorum impedit libero quos deserunt repellat
-                                        reiciendis delectus, consequatur alias asperiores minus architecto earum.
-                                        Ipsum, libero.
-                                    </p>
-
-                                    <h5>User Comments</h5>
-                                    <p>Hello</p>
-                                    <div class="fb-comments" data-href="https://www.facebook.com/groups/82338447841/"
-                                        data-width="400" data-numposts="10"></div>
-
-
-                                    <!-- <iframe width="400" height="550" src="http://meetu.ps/3jBgWG" frameborder="0"></iframe> -->
-
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <!--End Route Map and Description-->
-                </tbody>
-            </table>
-            <!--End #route-table-->
-
-
-        </div>
-        <!--End Table-List Container-->
-    </section>
-    <!--End Table-List Section---------------------------------------->
+    <!--NOTE: The mtn-route-table partial is nested in the mtn-table partial  -->
+    <% include ../partials/mtn-table%>
+    
 
     <footer>
         <% include ../partials/footer %>
     </footer>
 
+    <!--NOTE: These are the script tags for all the view JS files...NEEDS TO BE CLEANED UP! -->
     <% include ../partials/js-script-tags %>
 
 </body>
