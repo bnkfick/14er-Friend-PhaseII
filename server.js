@@ -7,6 +7,7 @@
 var express = require("express");
 var authRoutes = require("./routes/auth-routes");
 const keys = require("./config/keys");
+const expressSession = require("express-session");
 const cookieSession = require("cookie-session");
 const passport = require('passport');
 
@@ -34,12 +35,16 @@ app.use(cookieSession({
   keys: [keys.session.cookieKey]
 }));
 
+app.use(expressSession({secret: 'mySecretKey'}));
+
 // initialize passport
 app.use(passport.initialize());
 app.use(passport.session());
 
 // set up routes
-app.use('/auth', authRoutes);
+//app.use('/auth', authRoutes);
+//app.use('/profile', auth.checkAuthentication, profile);
+
 // Routes
 // =============================================================
 require("./routes/html-routes.js")(app);

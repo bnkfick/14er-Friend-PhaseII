@@ -1,5 +1,7 @@
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20");
+const LocalStrategy = require('passport-local').Strategy;
+
 const keys = require("./keys");
 
 // Requiring our Todo model
@@ -61,9 +63,8 @@ passport.use(
             }
 
         });
-
-
-
     })
+
+    
 );
 
