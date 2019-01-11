@@ -11,34 +11,6 @@
     </header>
 
 
-    <!--  --------------------------------------------------------------->
-    <section>
-        <div id="table-list" class="container">
-            <table id="mtn-render" class="table glass">
-                <thead class="thead-dark">
-                    <tr>
-                        <th class="th-sm align-middle">Favorite</th>
-                        <th class="th-sm align-middle">Rank</th>
-                        <th class="th-md align-middle">Mountain</th>
-                        <th class="th-md align-middle">Elevation</th>
-                        <th class="th-md align-middle">Wind Direction</th>
-                        <th class="th-md align-middle">Wind Speed</th>
-                        <th class="th-md align-middle">Current Temp</th>
-                        <th class="th-md align-middle">Short Forecast</th>
-                        <th class="th-md align-middle">Distance to You</th>
-                        <th class="th-sm"></th>
-                    </tr>
-                </thead>
-            </table>
-            <!--Mtn-X-Table **Dynamially render mtn-# based on array-->
-            <% include ../partials/mtn-table %>
-
-            <!--mtn-routes-table is nested in mtn-table via JQuery-->
-            <% include ../partials/mtn-routes-table%>
-        </div>
-        <!--End Table-List Container-->
-    </section>
-    <!--End Table-List Section---------------------------------------->
 
     <footer>
         <% include ../partials/footer %>
