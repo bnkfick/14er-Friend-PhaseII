@@ -6,6 +6,9 @@
 // =============================================================
 var path = require("path");
 
+// Requiring our Todo model
+var db = require("../models");
+
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -15,7 +18,13 @@ module.exports = function(app) {
 
   //index page
   app.get('/', function (req, res) {
-    res.render('pages/index');
+    //get mtn info with sequelize 
+    db.Mountain.findAll({})
+    .then(function(data) {
+console.log(data);
+      res.render('pages/index', { mtns: data} );
+    });
+    
   });
 
   //Not needed with EJS route above

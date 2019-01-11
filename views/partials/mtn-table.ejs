@@ -16,8 +16,9 @@
                     </tr>
                 </thead>
             </table>
+            <% mtns.forEach(function(mtn) { %>
             <!--Mtn-X-Table **Dynamially render mtn-# based on array-->
-            <table id="mtn-i" class="mtn-template table glass">
+            <table id="<%=mtn.id%>" class="mtn-template table glass">
                 <thead class="thead-dark thead-hide">
                     <tr>
                         <th class="th-sm">Favorite</th>
@@ -33,12 +34,14 @@
                     </tr>
                 </thead>
                 <tbody>
+
                     <tr id="conditions">
+                            
                         <!--turn background color of entire row green, yellow, or red depending on conditional params-->
                         <td class="align-middle"><i value="false" class="favorite far fa-heart fa-2x"></i></td>
-                        <td class="rank align-middle"></td>
-                        <td class="name align-middle"></td>
-                        <td class="elevation align-middle"></td>
+                        <td class="rank align-middle"><%=mtn.rank %></td>
+                        <td class="name align-middle"><%=mtn.peakName%></td>
+                        <td class="elevation align-middle"><%=mtn.elevation%></td>
                         <td id="mtn-i-wind-direction" class="wind-direction align-middle"></td>
                         <td id="mtn-i-wind" class="windspeed align-middle"></td>
                         <td id="mtn-i-temperature" class="temperature align-middle"></td>
@@ -71,6 +74,7 @@
                     <!--End Routes sub-Table-->
                 </tbody>
                 <!--End Mtn-X-body-->
+                <% }); %>
             </table>
 
             <!--mtn-routes-table is nested in mtn-table via JQuery-->
