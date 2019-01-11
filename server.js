@@ -7,7 +7,6 @@
 var express = require("express");
 var authRoutes = require("./routes/auth-routes");
 const keys = require("./config/keys");
-const expressSession = require("express-session");
 const cookieSession = require("cookie-session");
 const passport = require('passport');
 
@@ -31,18 +30,19 @@ app.use(express.static("public"));
 
 // set up session cookies
 app.use(cookieSession({
+  //maxAge is dummy/example
   maxAge: 24 * 60 * 60 * 1000,
   keys: [keys.session.cookieKey]
 }));
 
-app.use(expressSession({secret: 'mySecretKey'}));
+//app.use(expressSession({secret: 'mySecretKey'}));
 
 // initialize passport
 app.use(passport.initialize());
 app.use(passport.session());
 
 // set up routes
-//app.use('/auth', authRoutes);
+app.use('/auth', authRoutes);
 //app.use('/profile', auth.checkAuthentication, profile);
 
 // Routes
@@ -58,7 +58,7 @@ require("./routes/user-api-routes.js")(app);
 
 //BE SURE TO REMOVE {FORCE:TRUE}!!!
 // =============================================================
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
