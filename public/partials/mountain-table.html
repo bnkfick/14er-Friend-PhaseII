@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <title>Peaks</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+            <script src="main.js"></script>
+        </head>
+        <body>
+            <div id="app">
+                <ul>
+                    <li class="peak">
+                        <img>
+                        <p>{{ rank }}</p>
+                        <p>{{ mountain }}</p>
+                        <p>{{ elevation }}</p>
+                        <p>{{ windDirection }}</p>
+                        <p>{{ windSpeed }}</p>
+                        <p>{{ currentTemp }}</p>
+                        <p>{{ shortForecast }}</p>
+                        <p>{{ distance }}</p>
+                    </li>
+                </ul>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <script src="../assets/js/mountain-view.js"></script>
+        </body>
+    </html>

@@ -13,74 +13,58 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the routes of a mountain
-  app.get("/api/mountain-routes/", function(req, res) {
-    db.Route.findAll({})
-      .then(function(dbRoute) {
-        res.json(dbRoute);
+  app.get("/api/mountain_routes", function(req, res) {
+    db.Mountain_route.findAll({})
+      .then(function(data) {
+        res.json(data);
       });
   });
 
   // Get route for returning specific mtn-route
-  app.get("/api/mountain-routes/:name", function(req, res) {
-    db.Mountain.findAll({
+  app.get("/api/mountain_routes/:name", function(req, res) {
+    db.Mountain_route.findOne({
       where: {
-        name: req.params.name
+        routeName: req.params.name
       }
     })
-      .then(function(dbMountain) {
-        res.json(dbMountain);
+      .then(function(data) {
+        res.json(data);
       });
   });
     
  // PUT route for updating mountains on admin page. Yes! Change code
-//   app.put("/api/posts", function(req, res) {
-//     db.Post.update(req.body,
-//       {
-//         where: {
-//           id: req.body.id
-//         }
-//       })
-//       .then(function(dbPost) {
-//         res.json(dbPost);
-//       });
-//   });
+  app.put("/api/mountain_routes/:name", function(req, res) {
+    db.Mountain_route.update(req.body,
+      {
+        where: {
+          routeName: req.body.name
+        }
+      })
+      .then(function(data) {
+        res.json(data);
+      });
+  });
     
-  // Get route for retrieving a single post
-//   app.get("/api/posts/:id", function(req, res) {
-//     db.Post.findOne({
-//       where: {
-//         id: req.params.id
-//       }
-//     })
-//       .then(function(dbPost) {
-//         res.json(dbPost);
-//       });
-//   });
 
-  // POST route for saving a new Mountain?  Change Code
-//   app.post("/api/posts", function(req, res) {
-//     console.log(req.body);
-//     db.Post.create({
-//       title: req.body.title,
-//       body: req.body.body,
-//       category: req.body.category
-//     })
-//       .then(function(dbPost) {
-//         res.json(dbPost);
-//       });
-//   });
+  // POST route for saving a new Route?  Change Code
+  app.post("/api/mountain_routes", function(req, res) {
+    console.log(req.body);
+    db.Mountain_route.create(req.body).then(function(data) {
+        res.json(data);
+      });
+  });
 
   // DELETE route for deleting mountain?  Change code
-//   app.delete("/api/posts/:id", function(req, res) {
-//     db.Post.destroy({
-//       where: {
-//         id: req.params.id
-//       }
-//     })
-//       .then(function(dbPost) {
-//         res.json(dbPost);
-//       });
-//   });
+  app.delete("/api/mountain_routes/:id", function(req, res) {
+    db.Mountain_route.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function(data) {
+        res.end();
+      });
+  });
 
  
 };
