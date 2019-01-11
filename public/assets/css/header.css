@@ -1,0 +1,25 @@
+
+.navbar .btn {
+    margin: 0 0.25rem;
+}
+
+.navbar-brand {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+.navbar-brand h2{
+    margin: 0 0.5rem;
+    line-height: 4rem;
+    
+    font-size: 3rem;
+}
+.nav-bar-logo {
+    max-height: 4rem;
+}
+
+.navbar-dark {
+    background-color:rgba(34, 34, 34, 0.968);
+}

@@ -10,6 +10,7 @@ const keys = require("./config/keys");
 const cookieSession = require("cookie-session");
 const passport = require('passport');
 
+
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -28,6 +29,9 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 
+//set view engine to ejs
+app.set('view engine', 'ejs');
+
 // set up session cookies
 app.use(cookieSession({
   //maxAge is dummy/example
@@ -43,7 +47,6 @@ app.use(passport.session());
 
 // set up routes
 app.use('/auth', authRoutes);
-//app.use('/profile', auth.checkAuthentication, profile);
 
 // Routes
 // =============================================================

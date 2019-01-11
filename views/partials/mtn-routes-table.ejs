@@ -1,0 +1,59 @@
+<table id="route-i" class="route-template table sub-table">
+    <thead class="thead-gray thead-hide">
+        <tr>
+            <th class="th-xl">Route Name</th>
+            <th class="th-md">Mileage</th>
+            <th class="th-md">Gain (ft.)</th>
+            <th class="th-md">Difficulty</th>
+            <th class="th-lg">Fall Exposure</th>
+            <th class="th-md">Route Beta</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--Dynamically render route #-->
+        <tr>
+            <td class="route-name"></td>
+            <td class="route-mileage"></td>
+            <td class="route-gain"></td>
+            <td class="route-difficulty"></td>
+            <td class="route-exposure">
+                <div class="progress" style="height:2.5em">
+                    <div class="bg-success progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                        style="width: 25%">LOW</div>
+                </div>
+            </td>
+            <td class="route-description"><i id="beta-btn" class="fas fa-map-marked-alt fa-map-marked fa-2x"></i></td>
+        </tr>
+
+
+        <!--Route Map and Description View-->
+        <tr>
+            <td colspan="6">
+                <div id="route-x-beta" class="row route-beta">
+                    <div class="col-md-7 routeMapEmbed">
+                        <!--renderTable.js 112-->
+                    </div>
+                    <div class="col-md-5">
+                        <h5>Route Description:</h5>
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptatem
+                            vitae, sunt provident illum dolorum impedit libero quos deserunt repellat
+                            reiciendis delectus, consequatur alias asperiores minus architecto earum.
+                            Ipsum, libero.
+                        </p>
+
+                        <h5>User Comments</h5>
+                        <p>Hello</p>
+                        <div class="fb-comments" data-href="https://www.facebook.com/groups/82338447841/"
+                            data-width="400" data-numposts="10"></div>
+
+
+                        <!-- <iframe width="400" height="550" src="http://meetu.ps/3jBgWG" frameborder="0"></iframe> -->
+
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <!--End Route Map and Description-->
+    </tbody>
+</table>

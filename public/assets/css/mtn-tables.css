@@ -1,0 +1,76 @@
+/* .mtn-template {
+    display: none;
+}
+
+.route-template {
+    display: none;
+} */
+
+.sub-table {
+    color: black;
+}
+
+.table {
+    margin: 0;
+    padding: 0;
+}
+
+.thead-hide {
+    visibility: collapse;
+}
+
+.thead-gray {
+    background-color: rgba(37, 39, 37, 0.5);
+}
+
+td {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+/* th {
+    padding: 0;
+    margin: 0;
+} */
+.th-sm{
+    width: 5em;
+}
+
+.th-md {
+    width: 10em;
+}
+
+.th-lg {
+    width: 15em;
+}
+
+.th-xl {
+    width: 20em;
+}
+
+.name {
+    font-weight: bolder;
+    font-size: 1.2em;
+}
+
+.short-forecast {
+    background-size: 3em;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#td-route-beta {
+    padding: none !important;
+}
+
+.fa-circle {
+    color: green;
+}
+
+.fa-square {
+    color: blue;
+}
+
+.fa-exclamation-triangle {
+    color: black
+}

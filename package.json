@@ -19,7 +19,10 @@
   "homepage": "https://github.com/bnkfick/14er-Friend-PhaseII#readme",
   "dependencies": {
     "cookie-session": "^2.0.0-beta.3",
+    "dotenv": "^6.2.0",
+    "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "mysql": "^2.16.0",
     "mysql2": "^1.6.4",
     "passport": "^0.4.0",
     "passport-google-oauth": "^1.0.0",

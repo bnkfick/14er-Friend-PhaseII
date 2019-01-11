@@ -1,13 +1,69 @@
-.user-box {
-    width: 100%;
-    text-align: right;
-    float:right;
-    border: solid 1px #eee;
-    background-color: #fdfdfe;
-    border-radius: 5px;
-    margin-bottom: 50px;
+/* Login Style----------- */
+#about h1 {
+    border-bottom: solid 1px whitesmoke
 }
-.msgDiv {
+
+#about p {
+    font-size: 1.25rem;
+}
+.user-box p {
+    /* text-align: left; */
+    font-size: 1.25em;
+}
+
+.btn {
+    width: 10em;
+}
+
+#btnLogin {
+    background-color: rgb(30, 201, 255);
+}
+
+#btnLogout {
+    background-color: #296A22;
+    float: right;
+}
+
+.alert {
+    margin: 2em 0;
+}
+
+.inline {
+    display: flex;
+    align-content: center
+}
+
+#preferences {
+    margin-top: 3em;
+}
+#preferences label {
+    text-align: right;
+}
+
+#preferences-btn {
+    background-color: rgb(30, 201, 255);
+    float: left;
+}
+
+#preferences h4 {
+    margin: 1.5em 0;
+}
+
+#loggedIn p {
+    margin: 0;
+    padding: 0;
+}
+
+#pref-btn-div {
+    display:flex;
+    flex-direction: row;
+    align-items: flex-end
+}
+
+#pref-btn-div p {
+    margin-right: 1.3em;
+}
+/* .msgDiv {
     padding: 5px;
     line-height: 1.5;
 }
@@ -61,34 +117,5 @@ input[type=number] {
     content: "";
     display: block;
     clear: both;
-}
-/* Login Style----------- */
-.user-box {
-    width: 100%;
-    /* text-align: right; */
-    /* float:right; */
-    background-color: rgba(19, 18, 18, 0.671);
-    /* Experimental Feature must be turned on in chrome://flags/
-        -->Experimental Web Platform Features */
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    /* border: 5px solid #f4f8f780; */
-    /* margin-bottom: 50px; */
-    padding: 1.5em;
-    color: whitesmoke
-}
+} */
 
-#preferences {
-    width: 100%;
-    /* text-align: right; */
-    /* float:right; */
-    background-color: rgba(19, 18, 18, 0.671);
-    /* Experimental Feature must be turned on in chrome://flags/
-        -->Experimental Web Platform Features */
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    /* border: 5px solid #f4f8f780; */
-    /* margin-bottom: 50px; */
-    padding: 1.5em;
-    color: whitesmoke
-}
