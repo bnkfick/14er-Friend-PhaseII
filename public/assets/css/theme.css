@@ -36,10 +36,26 @@ h1 {
     border-bottom: 1px solid whitesmoke;
 }
 
-/* p{
-    padding: 1em;
-} */
+.flex-row {
+    display: flex;
+    flex-direction: row
+}
 
+/* Colors Classes (Match logo) */
+.white {
+    color: whitesmoke;
+}
+.red {
+    color: #ED463A;
+}
+.yellow {
+    color: #ECBF2F;
+}
+.blue {
+    color: #538D9F;
+}
+
+/* Margin Classes */
 .mt-1{
     margin-top: 1rem;
 }
@@ -90,6 +106,11 @@ h1 {
     margin-bottom: 8rem;
 }
 
+/* Line height */
+.lh-3{
+    line-height: 3rem;
+}
+
 .glass {
     width: 100%;
     background-color: rgba(19, 18, 18, 0.671);
@@ -109,6 +130,12 @@ h1 {
 i:hover {
     cursor: pointer;
     color: blue;
+}
+
+.bullet-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .card {
