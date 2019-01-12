@@ -11,7 +11,17 @@ $(function () {
     
 //Toggle #preference-box partial
     //Show/Hide depending on Login Status
-    $(`#preference-box`).hide()
+    // $(`#preference-box`).hide()
+    function preferenceBtnState() {
+        var btn = $(`#preference-btn`);
+        if ($(`#preference-box:visible`)) {
+            btn.removeClass(`fa-plus-square`);
+        } else {
+            btn.addClass(`fa-plus-square`);
+        }
+    }
+    
+    preferenceBtnState();
     
     $(`#preferences`).on('click', `#toggle-preference-box`, function () {
         var btn = $(`#preference-btn` )
