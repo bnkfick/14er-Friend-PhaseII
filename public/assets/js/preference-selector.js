@@ -3,7 +3,7 @@ $(function () {
     
 //Toggle #about partial
     //Delete .hide() after dev
-    $(`#about`).hide();
+    // $(`#about`).hide();
 
     $(`#about`).on(`click`, function () {
         $(`#about`).slideUp("slow");
