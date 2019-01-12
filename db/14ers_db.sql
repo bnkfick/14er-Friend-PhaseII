@@ -13,6 +13,7 @@ CREATE TABLE mountains(
 );
 
 CREATE TABLE mountain_routes
+
 (
 	id INT NOT NULL AUTO_INCREMENT,
 	foreignKey INT(10) NOT NULL,
