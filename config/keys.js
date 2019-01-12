@@ -1,10 +1,11 @@
-module.exports = {
-    google: {
-    
-        clientID: "735307606415-8irjplv6389hrh5d8placdlm1hl0icvd.apps.googleusercontent.com",
-        clientSecret: "HPU2gV4QeEHna6GbZfQE7ix6"
-    },
-        session: {
-        cookieKey: '14erFriendRocks'
-    }
-}
+require("dotenv").config();
+
+module.exports.google = {
+    key: process.env.API_KEY,
+    clientID: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET
+};
+
+module.exports.session = {
+    cookieKey: process.env.COOKIE_KEY
+};

@@ -44,5 +44,12 @@ module.exports = function(sequelize, DataTypes) {
       }
     });
 
+    Mountain.associate = function(models) {
+        // Associating Author with Posts
+        // When an Author is deleted, also delete any associated Posts
+        Mountain.hasMany(models.Mountain_route, {
+          onDelete: "cascade"
+        });
+      };
     return Mountain;
   };
