@@ -17,12 +17,8 @@
                 </thead>
             </table>
             <% 
-            var prevMtn;
-            mtns.forEach(function(mtn) { 
-                console.log(`mtns.mtnObj ${mtns.mtnObj}`);
-                console.log(`mtns.mtnObj.data ${mtns.mtnObj.data}`);
-                console.log(`mtns.mtnObj.trails ${mtns.mtnObj.trails}`);
-                %>
+            mtns.forEach(function(mtn) {             
+            %>
                 
             <!--Mtn-X-Table **Dynamially render mtn-# based on array-->
             <table id="<%=mtn.id%>" class="mtn-template table glass">
@@ -49,12 +45,12 @@
                         <td class="rank align-middle"><%=mtn.rank %></td>
                         <td class="name align-middle"><%=mtn.peakName%></td>
                         <td class="elevation align-middle"><%=mtn.elevation%></td>
-                        <td id="mtn-i-wind-direction" class="wind-direction align-middle"></td>
-                        <td id="mtn-i-wind" class="windspeed align-middle"></td>
-                        <td id="mtn-i-temperature" class="temperature align-middle"></td>
+                        <td id="<%=mtn.id%>-wind-direction" class="wind-direction align-middle"></td>
+                        <td id="<%=mtn.id%>-wind" class="windspeed align-middle"></td>
+                        <td id="<%=mtn.id%>-temperature" class="temperature align-middle"></td>
                         <td id="mtn-1-short-forecast" class="short-forecast align-middle"></td>
                         <td class="distance align-middle">180mi</td>
-                        <td class="align-middle"><i role="button" id="plus-btn" class="fas fa-plus-square fa-minus-square fa-2x"></i></td>
+                        <td class="align-middle"><i role="button" id="toggle-show-routes-btn" class="fas fa-plus-square fa-minus-square fa-2x"></i></td>
                     </tr>
 
 
@@ -81,11 +77,12 @@
                     <!--End Routes sub-Table-->
                 </tbody>
                 <!--End Mtn-X-body-->
-                <% }); %>
+
             </table>
 
             <!--mtn-routes-table is nested in mtn-table via JQuery-->
-            <% include ../partials/mtn-routes-table%>
+            <% include ../partials/mtn-routes-table %>
+        <% });//end for loop over mountains %>
         </div>
         <!--End Table-List Container-->
     </section>
