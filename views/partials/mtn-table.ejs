@@ -16,7 +16,14 @@
                     </tr>
                 </thead>
             </table>
-            <% mtns.forEach(function(mtn) { %>
+            <% 
+            var prevMtn;
+            mtns.forEach(function(mtn) { 
+                console.log(`mtns.mtnObj ${mtns.mtnObj}`);
+                console.log(`mtns.mtnObj.data ${mtns.mtnObj.data}`);
+                console.log(`mtns.mtnObj.trails ${mtns.mtnObj.trails}`);
+                %>
+                
             <!--Mtn-X-Table **Dynamially render mtn-# based on array-->
             <table id="<%=mtn.id%>" class="mtn-template table glass">
                 <thead class="thead-dark thead-hide">
