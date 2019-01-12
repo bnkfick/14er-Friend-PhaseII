@@ -40,6 +40,17 @@ h1 {
     display: flex;
     flex-direction: row
 }
+/* Buttons */
+
+.btn {
+    width: 10em;
+}
+
+i:hover {
+    cursor: pointer;
+    color: blue;
+}
+
 
 /* Colors Classes (Match logo) */
 .white {
@@ -129,6 +140,7 @@ h1 {
     line-height: 3rem;
 }
 
+/* Backgrounds */
 .glass {
     width: 100%;
     background-color: rgba(19, 18, 18, 0.671);
@@ -145,10 +157,7 @@ h1 {
     background-color: rgba(85, 85, 85, 0.406);
 } */
 
-i:hover {
-    cursor: pointer;
-    color: blue;
-}
+
 
 .bullet-list {
     display: flex;
