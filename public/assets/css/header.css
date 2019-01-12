@@ -1,0 +1,41 @@
+.navbar {
+    padding: 0.15rem 0;
+}
+.navbar-dark {
+    background-color:rgba(34, 34, 34, 0.968);
+}
+
+.navbar .btn {
+    margin: 0 0.25rem;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.navbar-brand {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+.navbar-brand h2{
+    margin: 0 0.5rem;
+    font-size: 3rem;
+    padding-top: 0.75rem;
+}
+.nav-bar-logo {
+    max-height: 4rem;
+}
+
+.fa-sliders {
+    color: whitesmoke;
+}
+
+.fa-sliders:hover {
+    color: #ECBF2F;
+}

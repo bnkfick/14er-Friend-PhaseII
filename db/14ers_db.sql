@@ -1,21 +1,22 @@
+DROP DATABASE 14ers_db;
+
 CREATE DATABASE 14ers_db;
 USE 14ers_db;
 
 CREATE TABLE mountains(
-	id INT(10) NOT NULL AUTO_INCREMENT,
 	rank INT(10) NOT NULL,
 	peakName VARCHAR(100) NOT NULL,
 	elevation INT(10) NOT NULL,
 	latitude FLOAT(15, 9) NOT NULL,
 	longitude FLOAT(15, 9) NOT NULL,
 	mountainRange VARCHAR(100) NOT NULL,
+    id INT(10) NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id)
 );
 
 CREATE TABLE mountain_routes
 
 (
-	id INT NOT NULL AUTO_INCREMENT,
 	foreignKey INT(10) NOT NULL,
 	routeNumber INT(10) NOT NULL,
 	routeName VARCHAR(100) NOT NULL,
@@ -27,8 +28,12 @@ CREATE TABLE mountain_routes
 	gain INT(10) NOT NULL, 
 	difficulty INT(10) NOT NULL,
 	exposure INT(10) NOT NULL,
+    id INT NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id)
 );
+
+DROP TABLE mountains;
+DROP TABLE mountain_routes;
 
 SELECT * FROM mountains;
 SELECT * FROM mountain_routes;

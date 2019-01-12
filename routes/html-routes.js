@@ -6,16 +6,33 @@
 // =============================================================
 var path = require("path");
 
+// Requiring our Todo model
+var db = require("../models");
+
 // Routes
 // =============================================================
 module.exports = function(app) {
 
   // Each of the below routes just handles the HTML page that the user gets sent to.
+  //use res.render to load up an ejs view file
 
-  // index route loads everything: user-box, mountains-table, routes-table, route-beta-table
-  app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+  //index page
+  app.get('/', function (req, res) {
+    //get mtn info with sequelize 
+    db.Mountain.findAll({})
+    .then(function(data) {
+      //loop over mountains and get all routes for each mountain
+      console.log(data);
+      res.render('pages/index', { mtns: data} );
+    });
   });
+
+
+  //Not needed with EJS route above
+  // index route loads everything: user-box, mountains-table, routes-table, route-beta-table
+  // app.get("/", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/index.html"));
+  // });
     
     // mountain route loads expanded view of single mountain and all it's routes + pictures, route conditions chat, etc
 //   app.get("/mountains/", function(req, res) {

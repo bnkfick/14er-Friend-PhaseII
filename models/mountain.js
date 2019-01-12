@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
-    var Mtn = sequelize.define("Mtn", {
-      mtn_name: {
+    var Mountain = sequelize.define("Mountain", {
+      peakName: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -9,16 +9,47 @@ module.exports = function(sequelize, DataTypes) {
       },
       rank: {
         type: DataTypes.INTEGER,
-        defaultValue: false
+        allowNull: false,
+        validate: {
+          len: [1]
+        }
+      },
+      elevation: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          len: [1,16]
+        }
+      },
+      latitude: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
+        validate: {
+          len: [1,16]
+        }
+      },
+      longitude: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
+        validate: {
+          len: [1,16]
+        }
+      },
+      mountainRange: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [1,140]
+        }
       }
     });
 
-/*     Mtn.associate = function (models) {
-      Mtn.belongsTo(models.Routes, { 
-        foreignKey: {
-          allowNull: false
-        }
-      });
-    } */
-    return Mtn;
+    Mountain.associate = function(models) {
+        // Associating Author with Posts
+        // When an Author is deleted, also delete any associated Posts
+        Mountain.hasMany(models.Mountain_route, {
+          onDelete: "cascade"
+        });
+      };
+    return Mountain;
   };

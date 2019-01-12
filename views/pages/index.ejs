@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- All the usuall head stuff including CSS files -->
+    <% include ../partials/head %>
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script>(function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=135260449884982&autoLogAppEvents=1';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <header>
+        <!--Navigation Bar -->
+        <% include ../partials/header %>
+    </header>
+    
+        <% include ../partials/about %>
+        
+        <!-- User login & Set Preferences -->
+        <% include ../partials/user-box %>
+
+        <!--NOTE: The mtn-route-table partial is nested in the mtn-table partial  -->
+        <% include ../partials/mtn-table %>
+    
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+
+    <!--NOTE: These are the script tags for all the view JS files...NEEDS TO BE CLEANED UP! -->
+    <% include ../partials/js-script-tags %>
+
+</body>
+
+</html>

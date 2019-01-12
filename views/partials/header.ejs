@@ -1,0 +1,51 @@
+<!--views/partials/header.ejs-->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar-main">
+  <div class="container ">
+    <div class="flex-row align-items-center">
+      <a class="navbar-brand js-scroll-trigger" href="#">
+        <img class="nav-bar-logo" src="/assets/img/co-mtn-logo.png" alt="">
+        <h2 class="spec-text align-middle mb-0">14'er Friend</h2>
+      </a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto flex-row align-items-center">
+        <!-- <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#about">About</a>
+        </li> -->
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="portfolioDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Product
+          </a>
+          <div class="dropdown-menu shadow border-0" aria-labelledby="portfolioDropdown">
+            <a class="dropdown-item js-scroll-trigger" href="#product">Design</a>
+            <a class="dropdown-item js-scroll-trigger" href="#use-cases">Use Cases</a>
+          </div>
+        </li> -->
+        <li class="nav-item">
+          <a id="user-settings" class="nav-link js-scroll-trigger" href="/user-settings">
+            <i class="fas fa-sliders-h fa-2x white"></i>
+          </a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#">About</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="btn btn-outline-light js-scroll-trigger btn-red btn-nav" href="#">Sign Up</a>
+        </li>
+
+        <!--Need to toggle text depending on login status-->
+        <li class="nav-item">
+            <a class="btn btn-outline-light js-scroll-trigger btn-red btn-nav" href="#">Log In/Log Out</a>
+        </li>
+        
+        <!--To User Preferences-->
+        <!-- <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#"><i class="fas fa-ellipsis-v"></i></a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
