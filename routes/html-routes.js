@@ -21,11 +21,12 @@ module.exports = function(app) {
     //get mtn info with sequelize 
     db.Mountain.findAll({})
     .then(function(data) {
-console.log(data);
+      //loop over mountains and get all routes for each mountain
+      console.log(data);
       res.render('pages/index', { mtns: data} );
     });
-    
   });
+
 
   //Not needed with EJS route above
   // index route loads everything: user-box, mountains-table, routes-table, route-beta-table
