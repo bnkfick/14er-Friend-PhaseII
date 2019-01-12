@@ -11,61 +11,124 @@
     font-size: 1.25em;
 }
 
-
-
-
-
-.btn {
-    width: 10em;
+/* Sliders!========== */
+/* ============================================== */
+/* #form-wrapper{
+    margin: 2.5em;
 }
 
-#btnLogin {
+#form-top {
+    border-bottom: 1px solid whitesmoke;
+} */
+/* 
+#template-start {
+    margin-top: 1.5em;
+} */
+.question {
+    
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.question .label-box {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.question .input-box {
+    display: flex;
+    flex-direction: row;
+    height: 5em;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-text {
+    /* margin: 0 0.5em; */
+    color:#a9ade0;
+    font-size: 0.75em;
+}
+
+/* .slider-handle {
+    background: #4b4ef3;
+   
+}
+
+.slider-selection {
+    background: #f12323
+} */
+
+.slider-selection.tick-slider-selection {
+    background-image: linear-gradient(to bottom,#4b4ef3 0,#8288de 100%);
+    background-repeat: repeat-x
+}
+
+.slider-tick.in-selection {
+    background-image: linear-gradient(to bottom,#4b4ef3 0,#8288de 100%);
+    background-repeat: repeat-x
+}
+
+.slider.slider-horizontal {
+    width: 40rem;
+}
+
+
+
+
+/* I dont think we need below======= */
+
+
+/* #btnLogin {
     background-color: rgb(30, 201, 255);
-}
+} */
 
-#btnLogout {
+/* #btnLogout {
     background-color: #296A22;
     float: right;
-}
+} */
 
-.alert {
+/* .alert {
     margin: 2em 0;
-}
+} */
 
-.inline {
+/* .inline {
     display: flex;
     align-content: center
-}
+} */
 
 /* #preferences {
     margin-top: 3em;
 } */
 #preferences label {
-    text-align: right;
+    text-align: center;
 }
 
 #preferences-submit-btn {
     /* background-color: rgb(30, 201, 255); */
-    float: left;
+    /* float: left; */
+    width: 30rem;
+    font-size: 1.5rem;
 }
 
 /* #preferences h4 {
     margin: 1.5em 0;
 } */
 
-#loggedIn p {
+/* #loggedIn p {
     margin: 0;
     padding: 0;
-}
+} */
 
-#pref-btn-div {
+/* #pref-btn-div {
     display:flex;
     flex-direction: row;
     align-items: flex-end
-}
+} */
 
-#pref-btn-div p {
+/* #pref-btn-div p {
     margin-right: 1.3em;
-}
+} */
 
 
