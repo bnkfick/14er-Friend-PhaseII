@@ -25,16 +25,16 @@ $("document").ready(function(){
             // console.log(times[0]);
 
             //Render weather to tables
-            $("#"+target+">tbody>#conditions>.windspeed").text(times[0].windSpeed);
-            $("#"+target+">tbody>#conditions>.temperature").text(times[0].temperature + " F");
-            $("#"+target+">tbody>#conditions>.wind-direction").text(times[0].windDirection);
-            $("#"+target+">tbody>#conditions>.short-forecast").text(times[0].shortForecast);
+            $("#mtn-"+target+">tbody>.conditions>.windspeed").text(times[0].windSpeed);
+            $("#mtn-"+target+">tbody>.conditions>.temperature").text(times[0].temperature + " F");
+            $("#mtn-"+target+">tbody>.conditions>.wind-direction").text(times[0].windDirection);
+            $("#mtn-"+target+">tbody>.conditions>.short-forecast").text(times[0].shortForecast);
             
             //Conditional Formatting for Windspeed
             var windSpeedString = times[0].windSpeed;
             var windSpeedRange = windSpeedString.match(/\d+/g).map(Number);
             //This returns array of low and high wind speeds
-            var windConditions = $("#mtn-" + (target) + "-wind") 
+            var windConditions = $("#mtn-" + (target) + ">tbody>.conditions>.windspeed") 
 
             if (windSpeedRange[1] > 75) {
                 windConditions.css("background-color", "rgba(191, 78, 63, 0.4)")
@@ -47,7 +47,7 @@ $("document").ready(function(){
             //Conditional Formatting for Temperature
             var temp = times[0].temperature;
 
-            var tempConditions = $("#mtn-" + target + "-temperature");
+            var tempConditions = $("#mtn-" + target + ">tbody>.conditions>.temperature");
 
             if (temp < 32) {
                 tempConditions.css("background-color", "rgb(30, 201, 255, 0.4)");
@@ -60,7 +60,7 @@ $("document").ready(function(){
             //Conditional Formatting for Short Forecast
             var shortForecast = times[0].shortForecast;
 
-            var shortForecastConditions = $("#mtn-" + (target) + "-short-forecast");
+            var shortForecastConditions = $("#mtn-" + (target) + ">tbody>.conditions>.short-forecast");
 
             if ((shortForecast === "Chance Snow Showers") ||
             (shortForecast === "Snow Showers Likely") ||
