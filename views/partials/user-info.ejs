@@ -1,0 +1,97 @@
+<!--Login and Preferences-->
+<!--Hidden Until Signed In-->
+<section id="user-info" class="mt-8 spec-text">    
+    <div class="container glass">
+        <div id="user-info-box" class="row align-items-center justify-content-end">
+            <div class="col-11">
+                <!-- Insert First name into h4? -->
+                <h4 class="ls-25 mb-0">Your Info</h4>
+            </div>
+            <div class="col-1 text-right">
+                <i id="user-info-btn" role="button" class="fas  fa-plus-square fa-minus-square fa-2x"></i>
+            </div>
+        </div>
+        <div id="preference-box" class="mt-5">
+            <form>
+                <!--User Name, Address, Phone, Profile Pic, Change Password, Notification Preferences (Email, Text, Both)-->
+                <!--Social Media: Create Group. Add/invite friends to Group communication.  Link Facebook, Twitter, Instagram-->
+                
+                <div class="row">
+                    
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label for="fname-input" class="col-4 col-form-label">First Name:</label>
+                            <div class="col-8">
+                                <input id="fname-input"  type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="lname-input" class="col-4 col-form-label">Last Name:</label>
+                            <div class="col-8">
+                                <input id="lname-input"  type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="phone-input" class="col-4 col-form-label"> Mobile Phone: </label>
+                            <div class="col-8">
+                                <input id="mobile-input" type="number" class="form-control" placeholder="To receive text notifications">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-6">
+                        <!-- GET CSS AND JS HERE: https://bootsnipp.com/snippets/eNbOa -->
+                        <div class="form-group row">
+                            <label class="col-4 col-form-label">Upload Image</label>
+                            <div class="input-group col-8">
+                                <span class="input-group-btn">
+                                    <span class="btn btn-default btn-file">
+                                        <input type="file" id="imgInp">
+                                    </span>
+                                </span>
+                                <input type="text" class="form-control" readonly>
+                            </div>
+                            <img id='img-upload'/>
+                        </div>
+                        <div class="form-group row">
+                            <label for="bio-area" class="col-4 col-form-label">Short-Bio:</label>
+                            <div class="col-8">
+                                <textarea id="bio-area"  type="textarea" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row align-items-center justify-content-end mt-5">
+                        <div class="col-11">
+                                <h4 class="ls-25 mb-0">Your Interests</h4>
+                        </div>
+                        <div class="col-1 text-right">
+                                <i id="interests-btn" role="button" class="fas  fa-plus-square fa-minus-square fa-2x"></i>
+                            </div>
+                            
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-3">Day Hiking</div>
+                        <div class="col-3">Backpacking</div>
+                        <div class="col-3">Roped Mountaineering</div>
+                        <div class="col-3">Big Wall Climbing</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">Ski Mountaineering</div>
+                        <div class="col-3">Ice Climbing</div>
+                        <div class="col-3">Backcountry Huts</div>
+                        <div class="col-3">High Altitude Training</div>
+                    </div>
+                
+
+                <div class="form-group row mt-5">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                        <button id="preferences-submit-btn" class="btn btn-outline-light" type="submit" user-preferences-btn">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

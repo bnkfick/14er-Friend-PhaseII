@@ -38,9 +38,13 @@ module.exports = function (app) {
       res.render('pages/index', {
         user: user,
         mtns: mtns,
-        trails: trails,
-      }  ))
+        trails: trails
+      }))
       .catch(err => res.send(err))
+  });
+
+  app.get('/climber-settings', function (req, res) {
+    res.render('pages/climber-settings');
   })
 };
 //      res.render('pages/index', { mtns }  )) doesn't work
