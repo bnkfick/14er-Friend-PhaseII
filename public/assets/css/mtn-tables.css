@@ -58,7 +58,11 @@ td {
     background-repeat: no-repeat;
     background-position: center;
 }
-
+.trailmap {
+    width:600;
+    height: 450;
+    border:0;
+}
 #td-route-beta {
     padding: none !important;
 }
