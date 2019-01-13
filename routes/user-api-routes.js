@@ -42,7 +42,7 @@ module.exports = function (app) {
           }
         }).then(function (data) {
             if (data) {
-                console.log("user has preferences");
+
                 
                 console.log(newUserPref);
                 db.UserPreference.update({
@@ -59,13 +59,14 @@ module.exports = function (app) {
                       if (result.changedRows == 0) {
                         return res.status(404).end();
                       } else {
+                        console.log(`Updated User Preferences:  ${data}`);
                         res.json(result);
                       }
                     });
             //if the user has preferences saved then do an update
             } else {
             //else do a create
-                console.log("user has no preferences");
+
                 db.UserPreference.create (
                     {
                         UserId: req.params.userid,
@@ -75,7 +76,7 @@ module.exports = function (app) {
                         distMax: newUserPref.distMax
                     }
                     ).then(function (data) {
-                        console.log(`New User created:  ${data}`);
+                        console.log(`New User Preferences created:  ${data}`);
                 });
             }
 
