@@ -1,24 +1,19 @@
 module.exports = function(sequelize, DataTypes) {
     var UserPreference = sequelize.define("UserPreference", {
       user_name: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.STRING
       },
       windLimit: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.STRING
       },
       precipLimit: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.STRING
       },
       tempMin: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.STRING
       },
-      tempMax: {
-        type: DataTypes.STRING,
-        allowNull: false
+      distMax: {
+        type: DataTypes.STRING
     },
 });
 

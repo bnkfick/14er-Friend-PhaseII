@@ -233,6 +233,11 @@ $(function () {
         //var userName = $("#user-name-input").val().trim();
         var user = $(this).data("userid");
 
+        if( user == "undefined") {
+            //User needs to sign up 
+            return;
+        }
+
         var windLimit = $("#max-wind-slider").slider('getValue');
         var precipLimit = $("#max-precip-slider").slider('getValue');
         var tempMin = $("#min-temp-slider").slider('getValue');
@@ -255,15 +260,12 @@ $(function () {
 
         $.ajax("/api/user/preferences/" + user, {
             type: "POST",
-            data: newUserPref
+            data: newUserPref 
         }).then(
-            function () {
+            function (data) {
+                console.log(data);
                 console.log("changed user preferences", newUserPref);
-
             }
         );
     });
-
-    
-
 });

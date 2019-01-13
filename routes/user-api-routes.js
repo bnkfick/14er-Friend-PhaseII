@@ -26,16 +26,15 @@ module.exports = function (app) {
 
 
     //logged in user page
-    app.get("/profile", authCheck, (req, res) => {
+    app.get("/climber-settings", authCheck, (req, res) => {
         console.log("We've passed the authCheck and are in /profile");
-        res.sendFile(path.join(__dirname, "../public/views/user.html"));
+        res.render('pages/climber-settings', { user: user } );
     });
 
 
 
     app.post("/api/user/preferences/:userid", function (req, res) {
-        //console.log("post(/api/user/preferences/:userid...");
-        console.log(req.body.newUserPref);
+        var newUserPref = req.body;
         //does the user already have preferences saved
         db.UserPreference.findOne({
           where: {
@@ -44,9 +43,10 @@ module.exports = function (app) {
         }).then(function (data) {
             if (data) {
                 console.log("user has preferences");
-                var newUserPref = req.body.newUserPref;
-                db.UserPreferences.update({
-                    windLimit: newUserPref.windLimit,
+                
+                console.log(newUserPref);
+                db.UserPreference.update({
+                    windLimit: req.body.windLimit,
                     precipLimit: newUserPref.precipLimit,
                     tempMin: newUserPref.tempMin,
                     distMax: newUserPref.distMax
@@ -66,7 +66,7 @@ module.exports = function (app) {
             } else {
             //else do a create
                 console.log("user has no preferences");
-                db.UserPreferences.create (
+                db.UserPreference.create (
                     {
                         UserId: req.params.userid,
                         windLimit: newUserPref.windLimit,
