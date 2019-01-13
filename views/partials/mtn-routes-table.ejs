@@ -21,11 +21,11 @@ trails.forEach(function(trail) {
             <td class="route-name"><%=trail.routeName%></td>
             <td class="route-mileage"><%=trail.mileage%></td>
             <td class="route-gain"><%=trail.gain%></td>
-            <td class="route-difficulty"><%=trail.difficulty%></td>
+            <td class="route-difficulty" ><%=trail.difficulty%></td>
             <td class="route-exposure">
                 <div class="progress" style="height:2.5em">
                     <div class="bg-success progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                        style="width: 25%"><%=trail.exposure%></div>
+                        style="width: 25%" value="<%=trail.exposure%>"><%=trail.exposure%></div>
                 </div>
             </td>
             <td class="toggle-show-route-beta-btn"><i id="<%=trail.id%>" class="fas fa-map-marked-alt fa-map-marked fa-2x"></i></td>
