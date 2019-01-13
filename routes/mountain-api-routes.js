@@ -17,6 +17,7 @@ module.exports = function(app) {
     console.group("in api/mountains");
     db.Mountain.findAll({})
       .then(function(data) {
+        // console.log(data);
         res.json(data);
       });
   });

@@ -15,58 +15,65 @@
             <form>
                 <div class="form-group question-template question">
                     <div class="row">
-                        <div class="col-md-3 label-box">
-                            <label id="q-i">Minimum Temperature (F)</label>
+                        <div class="col-2 label-box">
+                            <label>Minimum Temperature</label>
                         </div>
-                        <div class="col-md-9 text-center input-box">
-                            <input id="min-temp-slider" class="custom-slider" type="text" data-slider-ticks="[-20, -10, 0, 10, 20, 30, 40, 50, 60]" data-slider-ticks-snap-bounds="5" data-slider-ticks-labels='["-20", "-10", "0", "10", "20", "30", "40", "50", "60"]' data-slider-value="-20"/>
+                        <div id="min-temp-box" class="col-8 text-center input-box">
+                            <input id="min-temp-slider" class="custom-slider" type="text"/>
                         </div>
-                    </div>
-                </div>
-                <div class="form-group question-template question">
-                    <div class="row">
-                        <div class="col-md-3 label-box">
-                            <label id="q-i">Maximum Wind Speeds (mph)</label>
-                        </div>
-                        <div class="col-md-9 text-center input-box">
-                            <input id="max-wind-slider" class="custom-slider" type="text" data-slider-ticks="[0, 10, 20, 30, 40, 50, 60, 70, 80]" data-slider-ticks-snap-bounds="5" data-slider-ticks-labels='["0", "10", "20", "30", "40", "50", "60", "70", "80"]' data-slider-value="0"/>
+                        <div class="col-2 text-center readout-box">
+                            <span class="readout">-20</span> F
                         </div>
                     </div>
                 </div>
                 <div class="form-group question-template question">
                     <div class="row">
-                        <div class="col-md-3 label-box">
-                            <label id="q-i">Maximum Chance <br>of Precipitation (%)</label>
+                        <div class="col-2 label-box">
+                            <label>Max Wind Speeds</label>
                         </div>
-                        <div class="col-md-9 text-center input-box">
-                            <input id="max-precip-slider" class="custom-slider" type="text" data-slider-ticks="[0, 10, 20, 30, 40, 50, 60, 70, 80]" data-slider-ticks-snap-bounds="5" data-slider-ticks-labels='["0", "10", "20", "30", "40", "50", "60", "70", "80"]' data-slider-value="0"/>
+                        <div id="max-wind-box" class="col-8 text-center input-box">
+                            <input id="max-wind-slider" class="custom-slider" type="text"/>
+                        </div>
+                        <div class="col-2 text-center readout-box">
+                            <span class="readout">0</span> mph
                         </div>
                     </div>
                 </div>
                 <div class="form-group question-template question">
                     <div class="row">
-                        <div class="col-md-3 label-box">
-                            <label id="q-i">Maximum <br> Distance (mi)</label>
+                        <div class="col-2 label-box">
+                            <label>Max Chance of Precipitation</label>
                         </div>
-                        <div class="col-md-9 text-center input-box">
-                            <input id="max-dist-slider" class="custom-slider" type="text" data-slider-ticks="[0, 50, 100, 150, 200, 250, 300, 350, 400]" data-slider-ticks-snap-bounds="5" data-slider-ticks-labels='["0", "50", "100", "150", "200", "250", "300", "350", "400"]' data-slider-value="0"/>
+                        <div id="max-precip-box" class="col-8 text-center input-box">
+                            <input id="max-precip-slider" class="custom-slider" type="text"/>
+                        </div>
+                        <div class="col-2 text-center readout-box">
+                            <span class="readout">0</span> %
                         </div>
                     </div>
                 </div>
-<!--                 <div class="form-group row mt-5">
-                    <div class="col-sm-3"></div>
-                    <div class="col-sm-9">
-                        <button id="preferences-submit-btn" class="btn bg-yellow" type="submit"">Save</button>
+                <div class="form-group question-template question">
+                    <div class="row">
+                        <div class="col-2 label-box">
+                            <label>Max Distance</label>
+                        </div>
+                        <div id="max-dist-box" class="col-8 text-center input-box">
+                            <input id="max-dist-slider" class="custom-slider" type="text"/>
+                        </div>
+                        <div class="col-2 text-center readout-box">
+                            <span class="readout">0</span> mi
+                        </div>
                     </div>
                 </div>
- -->
-
-
-
-
-
-
-                <!--Barb's previous inputs-->
+                <div class="form-group row mt-5">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                        <button id="preferences-submit-btn" class="btn btn-outline-light" type="submit" user-preferences-btn">Save</button>
+                    </div>
+                </div>
+                
+                <!--Barb's previous inputs for reference if needed.  IF NOT PLEASE LEAVE COMMENTED OUT!! :)-->
+                
                 <!-- <div class="row">
                     
                     <div class="col-md-6">
@@ -89,9 +96,8 @@
                             </div>
                         </div>
                     </div>
-
-                    <!--Right Column-->
-
+                    
+                    
                     <div class="col-md-6">
                         <div class="form-group row">
                             <label for="temperature-min-input" class="col-sm-6 col-form-label">Min Temperature:</label>
@@ -118,10 +124,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </form>
         </div>
-            
-        
     </div>
 </section>

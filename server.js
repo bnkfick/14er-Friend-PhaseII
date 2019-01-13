@@ -9,6 +9,8 @@ var authRoutes = require("./routes/auth-routes");
 const keys = require("./config/keys");
 const cookieSession = require("cookie-session");
 const passport = require('passport');
+require("dotenv").config();
+console.log(keys);
 
 
 // Sets up the Express App

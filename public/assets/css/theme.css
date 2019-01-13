@@ -16,8 +16,9 @@ body {
 body {
     background-image: url("https://cdn2.outdoorphotographer.com/contests/496458/Bill_Tuttle_Maroon-Bells-and-Maroon-Lake.jpg");
     background-repeat: no-repeat;
+    background-attachment: fixed;
     /* background-position: center; */
-    background-size: cover;
+    /* background-size: cover; */
     text-align: center
 }
 
@@ -48,7 +49,7 @@ h1 {
 
 i:hover {
     cursor: pointer;
-    color: blue;
+    color: #ECBF2F;
 }
 
 

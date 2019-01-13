@@ -84,4 +84,11 @@ module.exports = function (app) {
 
 };
 
-
+// [$.get("api/mountains/", function(data) {
+//     var mtns = data;
+//     for(var i = 0; i < data.length; i++) {
+//       var weatherLink = mtns[i].weatherLink;
+//       var target = i + 1;
+//       getWeatherConditions(i,target);
+//     }
+// });]
