@@ -37,7 +37,7 @@ trails.forEach(function(trail) {
             <td colspan="6">
                 <div id="<%=trail.id%>-beta" class="row route-beta">
                     <div class="col-md-7 routeMapEmbed">
-                        <!--renderTable.js 112-->
+                            <iframe class="trailmap" frameborder="0" src="<%=trail.routeMapEmbed%>"></iframe>
                     </div>
                     <div class="col-md-5">
                         <h5>Route Description:</h5>
