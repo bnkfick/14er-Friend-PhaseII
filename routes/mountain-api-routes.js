@@ -14,6 +14,7 @@ module.exports = function(app) {
 
   // GET route for getting all of the mountains
   app.get("/api/mountains/", function(req, res) {
+    console.group("in api/mountains");
     db.Mountain.findAll({})
       .then(function(data) {
         res.json(data);
