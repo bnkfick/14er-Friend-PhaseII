@@ -27,16 +27,18 @@ module.exports = function (app) {
   //feed View the result of multiple server responses
   //OUCH
   app.get('/', (req, res) => {
-
-    
+    console.log("=============================================");
+    console.log(`req.user ${req.user}`);
+    var user = req.user;
     Promise.all([
+      req.user,
       get(`http://localhost:${PORT}/api/mountains`),
       get(`http://localhost:${PORT}/api/mountain_routes`),
-    ]).then(([mtns, trails]) =>
+    ]).then(([user, mtns, trails]) =>
       res.render('pages/index', {
+        user: user,
         mtns: mtns,
         trails: trails,
-        user: user
       }  ))
       .catch(err => res.send(err))
   })

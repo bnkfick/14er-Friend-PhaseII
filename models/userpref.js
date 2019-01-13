@@ -22,6 +22,14 @@ module.exports = function(sequelize, DataTypes) {
     },
 });
 
+UserPreference.associate = function(models) {
+  models.UserPreference.belongsTo(models.User, {
+      foreignKey: {
+          allowNull: false
+      }
+  });
+}
+
 return UserPreference;
 };
 
