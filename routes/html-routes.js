@@ -35,7 +35,8 @@ module.exports = function (app) {
     ]).then(([mtns, trails]) =>
       res.render('pages/index', {
         mtns: mtns,
-        trails: trails
+        trails: trails,
+        user: user
       }  ))
       .catch(err => res.send(err))
   })
