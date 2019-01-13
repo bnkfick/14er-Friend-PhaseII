@@ -1,6 +1,8 @@
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20");
 const keys = require("./keys");
+require("dotenv").config();
+
 
 // Requiring our Todo model
 var db = require("../models");
