@@ -33,13 +33,15 @@
           <a class="nav-link js-scroll-trigger" href="#">About</a>
         </li> 
       -->
-      <% if (!user) { %>
+      <% 
+      var appUser = user;
+      if (appUser != null && !appUser) { %>
         <li class="nav-item">
           <a class="btn btn-outline-light js-scroll-trigger btn-red btn-nav" href="#">Log In</a>
         </li>
         <% } %>
         <!--Need to toggle text depending on login status-->
-        <% if (user) {  %>
+        <% if (appUser) {  %>
         <li class="nav-item">
             <a class="btn btn-outline-light js-scroll-trigger btn-red btn-nav" href="#">Log Out</a>
         </li>
