@@ -268,4 +268,65 @@ $(function () {
             }
         );
     });
+
+    $("#profile-submit-btn").on("click", function () {
+        event.preventDefault();
+        console.log("saving user profile");
+
+        var user = $(this).data("userid");
+        console.log("saving user id " + user);
+        if( user == "undefined") {
+            //User needs to sign up 
+            return;
+        }
+
+        var firstname = $("#fname-input").val();
+        var lastname = $("#lname-input").val();
+        var mobile = $("#mobile-input").val();
+        var image = $("#max-dist-slider").val();
+        var bio = $("#bio-area").val();
+        var interest1 = $("#interest1").val();
+        var interest2 = $("#interest1").val();
+        var interest3 = $("#interest1").val();
+        var interest4 = $("#interest1").val();
+        var interest5 = $("#interest1").val();
+        var interest6 = $("#interest1").val();
+        var interest7 = $("#interest1").val();
+        var interest8 = $("#interest1").val();
+
+
+        console.log(`userid: ${user}`);
+        console.log(`firstname: ${firstname}`);
+        console.log(`lastname: ${lastname}`);
+        console.log(`mobile: ${mobile}`);
+        console.log(`bio: ${bio}`);
+
+
+        var newUserProf = {
+            firstname: firstname,
+            lastname: lastname,
+            mobile: mobile,
+            image: image,
+            bio: bio,
+            interest1: 0,
+            interest2: 0,
+            interest3: 0,
+            interest4: 0,
+            interest5: 0,
+            interest6: 0,
+            interest7: 0,
+            interest8: 0
+        };
+        console.log(newUserProf);
+
+        $.ajax("/api/user/profile/" + user, {
+            type: "POST",
+            data: newUserProf 
+        }).then(
+            function (data) {
+                console.log(data);
+                console.log("changed user profile", newUserProf);
+            }
+        );
+    });
 });
