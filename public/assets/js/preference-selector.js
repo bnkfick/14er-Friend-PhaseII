@@ -40,28 +40,188 @@ $(function () {
     //Sliders==========================================================
     //Credit for basic to https://seiyria.com/bootstrap-slider/#example-13
     $("#min-temp-slider").slider({
-        ticks: [-20,-10,0,10,20,30,40,50,60],
-        ticks_labels: ["-20", "-10", "0", "10", "20", "30", "40", "50", "60"],
-        ticks_snap_bounds: 5,
+        value: -20,
+        ticks: [-20, -10, 0, 10, 20, 30, 40, 50, 60],
+        // ticks_labels: ["-20", "-10", "0", "10", "20", "30", "40", "50", "60"],
+        ticks_snap_bounds: 1,
+        handle: "square",
     });
 
     $("#max-wind-slider").slider({
-        ticks: [0,10,20,30,40,50,60,70,80],
-        ticks_labels: ["0", "10", "20", "30", "40", "50", "60", "70", "80"],
-        ticks_snap_bounds: 5,
+        value: 0,
+        ticks: [0, 10, 20, 30, 40, 50, 60, 70, 80],
+        // ticks_labels: ["0", "10", "20", "30", "40", "50", "60", "70", "80"],
+        ticks_snap_bounds: 1,
+        handle: "square",
     });
 
     $("#max-precip-slider").slider({
-        ticks: [0,10,20,30,40,50,60,70,80],
-        ticks_labels: ["0", "10", "20", "30", "40", "50", "60", "70", "80"],
-        ticks_snap_bounds: 5,
+        value: 0,
+        ticks: [0, 10, 20, 30, 40, 50, 60, 70, 80],
+        // ticks_labels: ["0", "10", "20", "30", "40", "50", "60", "70", "80"],
+        ticks_snap_bounds: 1,
+        handle: "square",
     });
 
     $("#max-dist-slider").slider({
-        ticks: [0,50,100,150,200,250,300,350,400],
-        ticks_labels: ["0", "50", "100", "150", "200", "250", "300", "350", "400"],
-        ticks_snap_bounds: 25,
+        value: 0,
+        ticks: [0, 50, 100, 150, 200, 250, 300, 350, 400],
+        // ticks_labels: ["0", "50", "100", "150", "200", "250", "300", "350", "400"],
+        ticks_snap_bounds: 5,
+        handle: "square",
     });
 
+    $(`#min-temp-box`).on(`slide`, function () {
+        //Crux was to set data-value of parent to easily 'find' children
+        var value = parseInt($(this).find(`input`).val());
+        var resetTicks = $(this).find(`.slider-tick`).css("background", "#F7F7F7");
+        var sliderElements = $(this).find(`.slider-selection.tick-slider-selection, .slider-tick.in-selection, .slider-handle  `)
+        
+        //set parent div to value
+        $(this).attr("data-value", value);
+    
+        //Taget .readout div
+        var readout = $(this).parent().find('.readout');
+        var readoutBox = $(this).parent().find('.readout-box')
+        if (value < 60) {
+            readout.text(value);
+        } else {
+            readout.text(`${value}+`);
+        }
+        
+        // Set ranges
+        var rangeStart = 0;
+        var range1 = value <= 0;
+        var range2 = (value > 0) && (value <= 20);
+        var range3 = (value > 20) && (value <= 40);
+        var range4 = (value > 40) && (value <= 60);
+        
+        // Set colors for ranges
+        var blue = "#538D9F"
+        var green = "rgb(152, 248, 114)"
+        var yellow = "#ECBF2F"
+        var red = "#ED463A"
+        
+        if (rangeStart) {
+            resetTicks;
+        } else if (range1) {
+            resetTicks;
+            sliderElements.css("background", blue);
+            readoutBox.css("color", blue);
+        } else if (range2) {
+            resetTicks;
+            sliderElements.css("background", green);
+            readoutBox.css("color", green);
+        } else if (range3) {
+            resetTicks;
+            sliderElements.css("background", yellow);
+            readoutBox.css("color", yellow);
+        } else if (range4) {
+            sliderElements.css("background", red);
+            readoutBox.css("color", red);
+        };
+      })
+    //Fully custom CSS transformation based on value
+    $(`#max-wind-box, #max-precip-box`).on(`slide`, function () {
+        //Crux was to set data-value of parent to easily 'find' children
+        var value = parseInt($(this).find(`input`).val());
+        var resetTicks = $(this).find(`.slider-tick`).css("background", "#F7F7F7");
+        var sliderElements = $(this).find(`.slider-selection.tick-slider-selection, .slider-tick.in-selection, .slider-handle  `)
+        
+        //set parent div to value
+        $(this).attr("data-value", value);
+
+        //Taget .readout div
+        var readout = $(this).parent().find('.readout');
+        var readoutBox = $(this).parent().find('.readout-box')
+        if (value < 80) {
+            readout.text(value);
+        } else {
+            readout.text(`${value}+`);
+        }
+        
+        // Set ranges
+        var rangeStart = 0;
+        var range1 = value <= 20;
+        var range2 = (value > 20) && (value <= 40);
+        var range3 = (value > 40) && (value <= 60);
+        var range4 = (value > 60) && (value <= 80);
+        
+        // Set colors for ranges
+        var blue = "#538D9F"
+        var green = "rgb(152, 248, 114)"
+        var yellow = "#ECBF2F"
+        var red = "#ED463A"
+        
+        if (rangeStart) {
+            resetTicks;
+        } else if (range1) {
+            resetTicks;
+            sliderElements.css("background", blue);
+            readoutBox.css("color", blue);
+        } else if (range2) {
+            resetTicks;
+            sliderElements.css("background", green);
+            readoutBox.css("color", green);
+        } else if (range3) {
+            resetTicks;
+            sliderElements.css("background", yellow);
+            readoutBox.css("color", yellow);
+        } else if (range4) {
+            sliderElements.css("background", red);
+            readoutBox.css("color", red);
+        };
+    })
+
+  $(`#max-dist-box`).on(`slide`, function () {
+    //Crux was to set data-value of parent to easily 'find' children
+    var value = parseInt($(this).find(`input`).val());
+    var resetTicks = $(this).find(`.slider-tick`).css("background", "#F7F7F7");
+    var sliderElements = $(this).find(`.slider-selection.tick-slider-selection, .slider-tick.in-selection, .slider-handle  `)
+    
+    //set parent div to value
+    $(this).attr("data-value", value);
+
+    //Taget .readout div
+    var readout = $(this).parent().find('.readout');
+    var readoutBox = $(this).parent().find('.readout-box')
+    if (value < 400) {
+        readout.text(value);
+    } else {
+        readout.text(`${value}+`);
+    }
+    
+    // Set ranges
+    var rangeStart = 0;
+    var range1 = value <= 100;
+    var range2 = (value > 100) && (value <= 200);
+    var range3 = (value > 200) && (value <= 300);
+    var range4 = (value > 300) && (value <= 400);
+    
+    // Set colors for ranges
+    var blue = "#538D9F"
+    var green = "rgb(152, 248, 114)"
+    var yellow = "#ECBF2F"
+    var red = "#ED463A"
+    
+    if (rangeStart) {
+        resetTicks;
+    } else if (range1) {
+        resetTicks;
+        sliderElements.css("background", blue);
+        readoutBox.css("color", blue);
+    } else if (range2) {
+        resetTicks;
+        sliderElements.css("background", green);
+        readoutBox.css("color", green);
+    } else if (range3) {
+        resetTicks;
+        sliderElements.css("background", yellow);
+        readoutBox.css("color", yellow);
+    } else if (range4) {
+        sliderElements.css("background", red);
+        readoutBox.css("color", red);
+    };
+  })
 
 });

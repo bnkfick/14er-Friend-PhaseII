@@ -4,7 +4,7 @@
 trails.forEach(function(trail) {  
     if (mtn.id === trail.MountainId) {
 %>
-<table id="route-i" class="route-template table sub-table">
+<table id="route-<%=trail.id%>" class="route-template table sub-table">
     <thead class="thead-gray thead-hide">
         <tr>
             <th class="th-xl">Route Name</th>
@@ -17,7 +17,7 @@ trails.forEach(function(trail) {
     </thead>
     <tbody>
         <!--Dynamically render route #-->
-        <tr>
+        <tr class="route-info">
             <td class="route-name"><%=trail.routeName%></td>
             <td class="route-mileage"><%=trail.mileage%></td>
             <td class="route-gain"><%=trail.gain%></td>
@@ -25,17 +25,17 @@ trails.forEach(function(trail) {
             <td class="route-exposure">
                 <div class="progress" style="height:2.5em">
                     <div class="bg-success progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                        style="width: 25%">LOW</div>
+                        style="width: 25%"><%=trail.exposure%></div>
                 </div>
             </td>
-            <td class="route-description"><i id="beta-btn" class="fas fa-map-marked-alt fa-map-marked fa-2x"></i></td>
+            <td class="toggle-show-route-beta-btn"><i id="<%=trail.id%>" class="fas fa-map-marked-alt fa-map-marked fa-2x"></i></td>
         </tr>
 
 
         <!--Route Map and Description View-->
         <tr>
             <td colspan="6">
-                <div id="route-x-beta" class="row route-beta">
+                <div id="<%=trail.id%>-beta" class="row route-beta">
                     <div class="col-md-7 routeMapEmbed">
                         <!--renderTable.js 112-->
                     </div>

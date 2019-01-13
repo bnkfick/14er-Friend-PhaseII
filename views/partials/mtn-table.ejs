@@ -21,7 +21,7 @@
             %>
                 
             <!--Mtn-X-Table **Dynamially render mtn-# based on array-->
-            <table id="<%=mtn.id%>" class="mtn-template table glass">
+            <table id="mtn-<%=mtn.id%>" class="mtn-template table glass">
                 <thead class="thead-dark thead-hide">
                     <tr>
                         <th class="th-sm">Favorite</th>
@@ -38,7 +38,7 @@
                 </thead>
                 <tbody>
 
-                    <tr id="conditions">
+                    <tr class="conditions">
                             
                         <!--turn background color of entire row green, yellow, or red depending on conditional params-->
                         <td class="align-middle"><i value="false" class="favorite far fa-heart fa-2x"></i></td>
@@ -50,14 +50,14 @@
                         <td id="<%=mtn.id%>-temperature" class="temperature align-middle"></td>
                         <td id="mtn-1-short-forecast" class="short-forecast align-middle"></td>
                         <td class="distance align-middle">180mi</td>
-                        <td class="align-middle"><i role="button" id="toggle-show-routes-btn" class="fas fa-plus-square fa-minus-square fa-2x"></i></td>
+                        <td class="align-middle toggle-show-routes-btn"><i role="button" id="<%=mtn.id%>" class="fas fa-plus-square fa-minus-square fa-2x"></i></td>
                     </tr>
 
 
                     <!-- Routes sub-Table -->
                     <tr>
                         <td colspan="9">
-                            <div id="routes" class="routes-table">
+                            <div id="<%=mtn.id%>-routes" class="routes-table">
                                 <table id="route-render" class="table sub-table">
                                     <thead class="thead-gray sub-table">
                                         <tr>
@@ -70,18 +70,15 @@
                                         </tr>
                                     </thead>
                                 </table>
-
+                                <!--mtn-routes-table is nested in mtn-table via JQuery-->
+                                <% include ../partials/mtn-routes-table %>
                             </div>
                         </td>
                     </tr>
-                    <!--End Routes sub-Table-->
                 </tbody>
-                <!--End Mtn-X-body-->
-
             </table>
 
-            <!--mtn-routes-table is nested in mtn-table via JQuery-->
-            <% include ../partials/mtn-routes-table %>
+            
         <% });//end for loop over mountains %>
         </div>
         <!--End Table-List Container-->
