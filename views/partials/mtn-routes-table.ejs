@@ -1,3 +1,9 @@
+
+<% 
+
+trails.forEach(function(trail) {  
+    if (mtn.id === trail.MountainId) {
+%>
 <table id="route-i" class="route-template table sub-table">
     <thead class="thead-gray thead-hide">
         <tr>
@@ -12,10 +18,10 @@
     <tbody>
         <!--Dynamically render route #-->
         <tr>
-            <td class="route-name"></td>
-            <td class="route-mileage"></td>
-            <td class="route-gain"></td>
-            <td class="route-difficulty"></td>
+            <td class="route-name"><%=trail.routeName%></td>
+            <td class="route-mileage"><%=trail.mileage%></td>
+            <td class="route-gain"><%=trail.gain%></td>
+            <td class="route-difficulty"><%=trail.difficulty%></td>
             <td class="route-exposure">
                 <div class="progress" style="height:2.5em">
                     <div class="bg-success progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
@@ -57,3 +63,5 @@
         <!--End Route Map and Description-->
     </tbody>
 </table>
+<%  } //end if statement to see if trail should be drawn
+ });//end for loop over trails %>
