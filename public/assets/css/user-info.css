@@ -1,0 +1,19 @@
+.interests-btn {
+    border-radius: 5px;
+    font-size: 1.25rem;
+    padding-top: .75rem;
+    min-width: 15rem;
+    min-height: 3.5rem;
+}
+
+.interests-btn:hover{
+    /* color: whitesmoke;
+    background-color: rgba(236, 192, 47, 0.406);
+    backdrop-filter: blur(5px);   
+    -webkit-backdrop-filter: blur(5px);   */
+    cursor: pointer;
+}
+
+#interest-box .slider.slider-horizontal {
+    width: 30rem;
+}
