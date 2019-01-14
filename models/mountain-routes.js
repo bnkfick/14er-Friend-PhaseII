@@ -69,7 +69,11 @@ module.exports = function(sequelize, DataTypes) {
             validate: {
                 len: [1]
             }
-        }
+        },
+        routeMapEmbed: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+        },
     });
 
     Mountain_route.associate = function(models) {
@@ -77,7 +81,7 @@ module.exports = function(sequelize, DataTypes) {
             foreignKey: {
                 allowNull: false
             }
-        })
+        });
     }
 
 

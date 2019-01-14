@@ -8,52 +8,47 @@ var path = require("path");
 
 // Requiring our Todo model
 var db = require("../models");
-
+var PORT = process.env.PORT || 8080;
+const fetch = require('node-fetch');
 // Routes
 // =============================================================
-module.exports = function(app) {
+module.exports = function (app) {
 
-  // Each of the below routes just handles the HTML page that the user gets sent to.
-  //use res.render to load up an ejs view file
+  function get(url) {
+    console.log("get url: " + url);
+    return new Promise((resolve, reject) => {
+      fetch(url, {credentials: 'include'})
+        .then(res => res.json())
+        .then(data => resolve(data))
+        .catch(err => reject(err))
+    })
+  }
 
-  //index page
-  app.get('/', function (req, res) {
-    //get mtn info with sequelize 
-    db.Mountain.findAll({})
-    .then(function(data) {
-      //loop over mountains and get all routes for each mountain
-      console.log(data);
-      res.render('pages/index', { mtns: data} );
-    });
+  //feed View the result of multiple server responses
+  //OUCH
+  app.get('/', (req, res) => {
+
+    Promise.all([
+      req.user,
+      get(`http://localhost:${PORT}/api/mountains`),
+      get(`http://localhost:${PORT}/api/mountain_routes`),
+    ]).then(([user, mtns, trails]) =>
+      res.render('pages/index', {
+        user: user,
+        mtns: mtns,
+        trails: trails
+      }))
+      .catch(err => res.send(err))
   });
 
-
-  //Not needed with EJS route above
-  // index route loads everything: user-box, mountains-table, routes-table, route-beta-table
-  // app.get("/", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/index.html"));
-  // });
-    
-    // mountain route loads expanded view of single mountain and all it's routes + pictures, route conditions chat, etc
-//   app.get("/mountains/", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/mountain.html"));
-//   });
-    
-    // admin route loads page  with sections for managing users, form for entering mtn info, route info, monitoring comments, and user route updates/images
-//   app.get("/admin/", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/admin.html"));
-//   });
-
-    // user-settings route loads account preferences page: upload user image, create groups, add friends, etc
-//   app.get("/user-settings/", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/user-settings.html"));
-//   });
-    
-        // team route loads team dev page!
-//   app.get("/team/", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/user-settings.html"));
-//   });
-    
-  
-
+  app.get('/climber-settings', function (req, res) {
+    var user = req.user;
+    res.render('pages/climber-settings', { user });
+  })
 };
+//      res.render('pages/index', { mtns }  )) doesn't work
+//      res.render('pages/index', mtns  )) doesn't work 
+//      res.render('pages/index', { mtns: mtns }  ))  works 
+
+//res.render('pages/index', { mtns: data} ); //works
+//res.json([mtns, trails])) works //works

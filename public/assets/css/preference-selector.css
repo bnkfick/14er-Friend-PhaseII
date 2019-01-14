@@ -1,0 +1,141 @@
+/* Login Style----------- */
+#about h1 {
+    border-bottom: solid 1px whitesmoke
+}
+
+#about p {
+    font-size: 1.25rem;
+}
+#user-box p {
+    /* text-align: left; */
+    font-size: 1.25em;
+}
+
+/* Sliders!========== */
+/* ============================================== */
+/* #form-wrapper{
+    margin: 2.5em;
+}
+
+#form-top {
+    border-bottom: 1px solid whitesmoke;
+} */
+/* 
+#template-start {
+    margin-top: 1.5em;
+} */
+.question {
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.question .label-box,
+.question .readout-box {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.25rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.question .readout-box {
+    font-size: 3rem;
+}
+
+.question .input-box {
+    display: flex;
+    flex-direction: row;
+    height: 5em;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-text {
+    /* margin: 0 0.5em; */
+    color:#538D9F;
+    font-size: 0.75em;
+}
+
+.slider-tick {
+    display: none;
+}
+
+.slider-handle {
+    background: #538D9F
+}
+
+.slider-selection {
+    background: #f12323
+}
+
+.slider-selection.tick-slider-selection {
+    background-image: linear-gradient(to bottom,#538D9F,#538D9F 100%);
+    background-repeat: repeat-x
+}
+
+.slider-tick.in-selection {
+    background-image: linear-gradient(to bottom,#538D9F,#538D9F 100%);
+    background-repeat: repeat-x
+}
+
+.slider.slider-horizontal {
+    width: 40rem;
+}
+
+
+
+
+/* I dont think we need below======= */
+
+
+/* #btnLogin {
+    background-color: rgb(30, 201, 255);
+} */
+
+/* #btnLogout {
+    background-color: #296A22;
+    float: right;
+} */
+
+/* .alert {
+    margin: 2em 0;
+} */
+
+/* .inline {
+    display: flex;
+    align-content: center
+} */
+
+/* #preferences {
+    margin-top: 3em;
+} */
+#preferences label {
+    text-align: center;
+}
+
+#preferences-submit-btn {
+    /* background-color: rgb(30, 201, 255); */
+    /* float: left; */
+    width: 30rem;
+    font-size: 1.5rem;
+}
+
+/* #preferences h4 {
+    margin: 1.5em 0;
+} */
+
+/* #loggedIn p {
+    margin: 0;
+    padding: 0;
+} */
+
+/* #pref-btn-div {
+    display:flex;
+    flex-direction: row;
+    align-items: flex-end
+} */
+
+/* #pref-btn-div p {
+    margin-right: 1.3em;
+} */
+
+

@@ -5,7 +5,7 @@
 // Dependencies
 // =============================================================
 
-// Requiring our Todo model
+// Requiring our database models
 var db = require("../models");
 
 // Routes
@@ -14,8 +14,10 @@ module.exports = function(app) {
 
   // GET route for getting all of the mountains
   app.get("/api/mountains/", function(req, res) {
+    console.group("in api/mountains");
     db.Mountain.findAll({})
       .then(function(data) {
+        // console.log(data);
         res.json(data);
       });
   });
@@ -72,6 +74,5 @@ module.exports = function(app) {
         res.end();
       });
   });
-
  
 };
