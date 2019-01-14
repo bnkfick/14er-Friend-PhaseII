@@ -20,6 +20,18 @@ module.exports = function(sequelize, DataTypes) {
       },
     });
 
+    User.associate = function(models) {
+      User.hasOne(models.UserProfile, {
+        onDelete: "cascade"
+      });
+    };
+
+    User.associate = function(models) {
+      User.hasOne(models.UserPreference, {
+        onDelete: "cascade"
+      });
+    };
+
     return User;
   };
 

@@ -17,23 +17,24 @@ module.exports = function (app) {
   function get(url) {
     console.log("get url: " + url);
     return new Promise((resolve, reject) => {
-      fetch(url)
+      fetch(url, {credentials: 'include'})
         .then(res => res.json())
         .then(data => resolve(data))
         .catch(err => reject(err))
     })
   }
-  
+
   //feed View the result of multiple server responses
   //OUCH
   app.get('/', (req, res) => {
 
-    
     Promise.all([
+      req.user,
       get(`http://localhost:${PORT}/api/mountains`),
       get(`http://localhost:${PORT}/api/mountain_routes`),
-    ]).then(([mtns, trails]) =>
+    ]).then(([user, mtns, trails]) =>
       res.render('pages/index', {
+        user: user,
         mtns: mtns,
         trails: trails
       }))
@@ -41,7 +42,8 @@ module.exports = function (app) {
   });
 
   app.get('/climber-settings', function (req, res) {
-    res.render('pages/climber-settings');
+    var user = req.user;
+    res.render('pages/climber-settings', { user });
   })
 };
 //      res.render('pages/index', { mtns }  )) doesn't work

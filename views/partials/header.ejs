@@ -31,16 +31,21 @@
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#">About</a>
-        </li> -->
-        <li class="nav-item">
-          <a class="btn btn-outline-light js-scroll-trigger btn-nav" href="#">Sign Up</a>
-        </li>
+        </li> 
+      -->
+      <% 
 
-        <!--Need to toggle text depending on login status-->
+      if (!user) { %>
         <li class="nav-item">
-            <a class="btn btn-outline-light js-scroll-trigger btn-nav" href="#">Log In/Log Out</a>
+          <a class="btn btn-outline-light js-scroll-trigger btn-red btn-nav" href="#">Log In</a>
         </li>
-        
+        <% } %>
+        <!--Need to toggle text depending on login status-->
+        <% if (user) {  %>
+        <li class="nav-item">
+            <a class="btn btn-outline-light js-scroll-trigger btn-red btn-nav" href="#">Log Out</a>
+        </li>
+        <% } %>
         <!--To User Preferences-->
         <!-- <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#"><i class="fas fa-ellipsis-v"></i></a>
