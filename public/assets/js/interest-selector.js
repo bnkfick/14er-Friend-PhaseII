@@ -37,7 +37,7 @@ $(function () {
 
     
 
-    $(`.input-box`).on(`click`, function () {
+    $(`.interest-slider`).on(`click`, function () {
         //Crux was to set data-value of parent to easily 'find' children
         var value = parseInt($(this).find(`input`).val());
         var resetTicks = $(this).find(`.slider-tick`).css("background", "#F7F7F7");
@@ -98,7 +98,7 @@ $(function () {
         };
     })
 
-    $(`.input-box`).on(`slide`, function () {
+    $(`.interest-slider`).on(`slide`, function () {
         //Crux was to set data-value of parent to easily 'find' children
         var value = parseInt($(this).find(`input`).val());
         var resetTicks = $(this).find(`.slider-tick`).css("background", "#F7F7F7");
