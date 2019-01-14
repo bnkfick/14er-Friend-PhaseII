@@ -37,8 +37,7 @@ module.exports = function (app) {
     app.get('/google/redirect', passport.authenticate('google'), (req, res) => {
         console.log("/google/redirect");
         console.log('you reached the redirect callback URI.  you are logged in' + req.user);
-        res.redirect("/profile");
-
+        res.redirect("/climber-settings");
     });
 
 };

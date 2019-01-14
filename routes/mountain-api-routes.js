@@ -5,7 +5,7 @@
 // Dependencies
 // =============================================================
 
-// Requiring our Todo model
+// Requiring our database models
 var db = require("../models");
 
 // Routes
@@ -74,6 +74,5 @@ module.exports = function(app) {
         res.end();
       });
   });
-
  
 };
