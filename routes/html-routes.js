@@ -84,6 +84,8 @@ module.exports = function (app) {
 
   
 };
+
+
 //      res.render('pages/index', { mtns }  )) doesn't work
 //      res.render('pages/index', mtns  )) doesn't work 
 //      res.render('pages/index', { mtns: mtns }  ))  works 
