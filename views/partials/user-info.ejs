@@ -1,5 +1,6 @@
 <!--Login and Preferences-->
 <!--Hidden Until Signed In-->
+<%=userProf%>
 <section id="user-info" class="mt-8 spec-text">    
     <div class="container glass">
         <div id="user-info-box" class="row align-items-center justify-content-end">
@@ -15,26 +16,34 @@
             <form>
                 <!--User Name, Address, Phone, Profile Pic, Change Password, Notification Preferences (Email, Text, Both)-->
                 <!--Social Media: Create Group. Add/invite friends to Group communication.  Link Facebook, Twitter, Instagram-->
-                
+                <% 
+                var user = " ";
+                if (typeof userProf === 'undefined') { 
+                    user = " ";
+                } else {
+                    user = userProf;
+                }
+                console.log(user);
+                %> 
                 <div class="row">
                     
                     <div class="col-md-6">
                         <div class="form-group row">
                             <label for="fname-input" class="col-4 col-form-label">First Name:</label>
                             <div class="col-8">
-                                <input id="fname-input"  type="text" class="form-control">
+                                <input id="fname-input" value="" type="text" class="form-control">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="lname-input" class="col-4 col-form-label">Last Name:</label>
                             <div class="col-8">
-                                <input id="lname-input"  type="text" class="form-control">
+                                <input id="lname-input"  value="" type="text" class="form-control">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="mobile-input" class="col-4 col-form-label"> Mobile Phone: </label>
                             <div class="col-8">
-                                <input id="mobile-input" type="number" class="form-control" placeholder="To receive text notifications">
+                                <input id="mobile-input" type="number" class="form-control" value="" placeholder="To receive text notifications">
                             </div>
                         </div>
                     </div>
@@ -57,7 +66,7 @@
                         <div class="form-group row">
                             <label for="bio-area" class="col-4 col-form-label">Short-Bio:</label>
                             <div class="col-8">
-                                <textarea id="bio-area"  type="textarea" class="form-control"></textarea>
+                                <textarea id="bio-area" value=""  type="textarea" class="form-control"></textarea>
                             </div>
                         </div>
                     </div>
@@ -88,7 +97,7 @@
                 <div class="form-group row mt-5">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-8">
-                        <button id="profile-submit-btn" data-userid="<%=user%>" class="btn btn-outline-light" type="submit">Save</button>
+                        <button id="profile-submit-btn" data-userid="<%=user.id%>" class="btn btn-outline-light" type="submit">Save</button>
                     </div>
                 </div>
             </form>

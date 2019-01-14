@@ -24,26 +24,24 @@
             <a class="dropdown-item js-scroll-trigger" href="#use-cases">Use Cases</a>
           </div>
         </li> -->
+
+        <!-- <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#">About</a>
+        </li> 
+      -->
+      <% if (typeof user === 'undefined') { %>
+        <li class="nav-item">
+          <a class="btn btn-outline-light js-scroll-trigger btn-red btn-nav" href="/google">Log In</a>
+        </li>
+        <!--Need to toggle text depending on login status-->
+        <% } else {  %>
         <li class="nav-item">
           <a id="user-settings" class="nav-link js-scroll-trigger" href="/climber-settings">
             <i class="fas fa-sliders-h fa-2x white"></i>
           </a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#">About</a>
-        </li> 
-      -->
-      <% 
-
-      if (!user) { %>
         <li class="nav-item">
-          <a class="btn btn-outline-light js-scroll-trigger btn-red btn-nav" href="#">Log In</a>
-        </li>
-        <% } %>
-        <!--Need to toggle text depending on login status-->
-        <% if (user) {  %>
-        <li class="nav-item">
-            <a class="btn btn-outline-light js-scroll-trigger btn-red btn-nav" href="#">Log Out</a>
+            <a class="btn btn-outline-light js-scroll-trigger btn-red btn-nav" href="/logout">Log Out</a>
         </li>
         <% } %>
         <!--To User Preferences-->

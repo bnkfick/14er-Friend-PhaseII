@@ -2,11 +2,23 @@
 const path = require("path");
 // Requiring our database models
 var db = require("../models");
+var txtMsg = require("../msgs/send-sms");
 
-
+var PORT = process.env.PORT || 8080;
+const fetch = require('node-fetch');
 // Routes
 // =============================================================
 module.exports = function (app) {
+
+    function get(url) {
+        console.log("get url: " + url);
+        return new Promise((resolve, reject) => {
+          fetch(url, {credentials: 'include'})
+            .then(res => res.json())
+            .then(data => resolve(data))
+            .catch(err => reject(err))
+        })
+      }
 
     //middleware function to check if a user is authorized to 
     //see the user profile page
@@ -28,7 +40,37 @@ module.exports = function (app) {
     //logged in user page
     app.get("/climber-settings", authCheck, (req, res) => {
         console.log("We've passed the authCheck and are in /profile");
-        res.render('pages/climber-settings', { user: user });
+
+        var currUser = {
+            id: req.user.id,
+            user_name: req.user.user_name,
+            password: req.user.password,
+            email: req.user.email,
+            google_id: req.user.google_id,
+            thumbnail: req.user.thumbnail
+        };
+        Promise.all([
+            currUser,
+            get(`http://localhost:${PORT}/api/user/profile/${req.user.id}`),
+            get(`http://localhost:${PORT}/api/user/preferences/${req.user.id}`),
+        ]).then(([currUser, userProf, userPref]) =>
+            res.render('pages/climber-settings', {
+                user: currUser, 
+                userProf: userProf, 
+                userPref: userPref
+            }))
+            .catch(err => res.send(err))
+    })
+
+
+    app.get("/api/user/profile/:userid", function (req, res) {
+        db.UserProfile.findOne({
+            where: {
+                UserId: req.params.userid
+            }
+        }).then(function (data) {
+            res.json(data);
+        });
     });
 
     app.post("/api/user/profile/:userid", function (req, res) {
@@ -78,7 +120,7 @@ module.exports = function (app) {
                         lastname: newUserProf.lastname,
                         mobile: newUserProf.mobile,
                         img: newUserProf.img,
-                        bio: newUserProf.windLimit,
+                        bio: newUserProf.bio,
                         interest1: newUserProf.interest1,
                         interest2: newUserProf.interest2,
                         interest3: newUserProf.interest3,
@@ -90,6 +132,7 @@ module.exports = function (app) {
                         UserId: req.params.userid,
                     }
                 ).then(function (data) {
+                    txtMsg(newUserProf.mobile);
                     console.log(`New User Profile created:  ${data}`);
                 });
             }
@@ -97,6 +140,17 @@ module.exports = function (app) {
         });
 
     });
+
+    app.get("/api/user/preferences/:userid", function (req, res) {
+        db.UserPreference.findOne({
+            where: {
+                UserId: req.params.userid
+            }
+        }).then(function (data) {
+            res.json(data);
+        });
+    });
+
 
     app.post("/api/user/preferences/:userid", function (req, res) {
         var newUserPref = req.body;

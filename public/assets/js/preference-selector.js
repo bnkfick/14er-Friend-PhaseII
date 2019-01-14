@@ -76,10 +76,10 @@ $(function () {
         var value = parseInt($(this).find(`input`).val());
         var resetTicks = $(this).find(`.slider-tick`).css("background", "#F7F7F7");
         var sliderElements = $(this).find(`.slider-selection.tick-slider-selection, .slider-tick.in-selection, .slider-handle  `)
-        
+
         //set parent div to value
         $(this).attr("data-value", value);
-    
+
         //Taget .readout div
         var readout = $(this).parent().find('.readout');
         var readoutBox = $(this).parent().find('.readout-box')
@@ -88,20 +88,20 @@ $(function () {
         } else {
             readout.text(`${value}+`);
         }
-        
+
         // Set ranges
         var rangeStart = 0;
         var range1 = value <= 0;
         var range2 = (value > 0) && (value <= 20);
         var range3 = (value > 20) && (value <= 40);
         var range4 = (value > 40) && (value <= 60);
-        
+
         // Set colors for ranges
         var blue = "#538D9F"
         var green = "rgb(152, 248, 114)"
         var yellow = "#ECBF2F"
         var red = "#ED463A"
-        
+
         if (rangeStart) {
             resetTicks;
         } else if (range1) {
@@ -120,14 +120,14 @@ $(function () {
             sliderElements.css("background", red);
             readoutBox.css("color", red);
         };
-      })
+    })
     //Fully custom CSS transformation based on value
     $(`#max-wind-box, #max-precip-box`).on(`slide`, function () {
         //Crux was to set data-value of parent to easily 'find' children
         var value = parseInt($(this).find(`input`).val());
         var resetTicks = $(this).find(`.slider-tick`).css("background", "#F7F7F7");
         var sliderElements = $(this).find(`.slider-selection.tick-slider-selection, .slider-tick.in-selection, .slider-handle  `)
-        
+
         //set parent div to value
         $(this).attr("data-value", value);
 
@@ -139,20 +139,20 @@ $(function () {
         } else {
             readout.text(`${value}+`);
         }
-        
+
         // Set ranges
         var rangeStart = 0;
         var range1 = value <= 20;
         var range2 = (value > 20) && (value <= 40);
         var range3 = (value > 40) && (value <= 60);
         var range4 = (value > 60) && (value <= 80);
-        
+
         // Set colors for ranges
         var blue = "#538D9F"
         var green = "rgb(152, 248, 114)"
         var yellow = "#ECBF2F"
         var red = "#ED463A"
-        
+
         if (rangeStart) {
             resetTicks;
         } else if (range1) {
@@ -173,67 +173,64 @@ $(function () {
         };
     })
 
-  $(`#max-dist-box`).on(`slide`, function () {
-    //Crux was to set data-value of parent to easily 'find' children
-    var value = parseInt($(this).find(`input`).val());
-    var resetTicks = $(this).find(`.slider-tick`).css("background", "#F7F7F7");
-    var sliderElements = $(this).find(`.slider-selection.tick-slider-selection, .slider-tick.in-selection, .slider-handle  `)
-    
-    //set parent div to value
-    $(this).attr("data-value", value);
+    $(`#max-dist-box`).on(`slide`, function () {
+        //Crux was to set data-value of parent to easily 'find' children
+        var value = parseInt($(this).find(`input`).val());
+        var resetTicks = $(this).find(`.slider-tick`).css("background", "#F7F7F7");
+        var sliderElements = $(this).find(`.slider-selection.tick-slider-selection, .slider-tick.in-selection, .slider-handle  `)
 
-    //Taget .readout div
-    var readout = $(this).parent().find('.readout');
-    var readoutBox = $(this).parent().find('.readout-box')
-    if (value < 400) {
-        readout.text(value);
-    } else {
-        readout.text(`${value}+`);
-    }
-    
-    // Set ranges
-    var rangeStart = 0;
-    var range1 = value <= 100;
-    var range2 = (value > 100) && (value <= 200);
-    var range3 = (value > 200) && (value <= 300);
-    var range4 = (value > 300) && (value <= 400);
-    
-    // Set colors for ranges
-    var blue = "#538D9F"
-    var green = "rgb(152, 248, 114)"
-    var yellow = "#ECBF2F"
-    var red = "#ED463A"
-    
-    if (rangeStart) {
-        resetTicks;
-    } else if (range1) {
-        resetTicks;
-        sliderElements.css("background", blue);
-        readoutBox.css("color", blue);
-    } else if (range2) {
-        resetTicks;
-        sliderElements.css("background", green);
-        readoutBox.css("color", green);
-    } else if (range3) {
-        resetTicks;
-        sliderElements.css("background", yellow);
-        readoutBox.css("color", yellow);
-    } else if (range4) {
-        sliderElements.css("background", red);
-        readoutBox.css("color", red);
-    };
-  })
+        //set parent div to value
+        $(this).attr("data-value", value);
+
+        //Taget .readout div
+        var readout = $(this).parent().find('.readout');
+        var readoutBox = $(this).parent().find('.readout-box')
+        if (value < 400) {
+            readout.text(value);
+        } else {
+            readout.text(`${value}+`);
+        }
+
+        // Set ranges
+        var rangeStart = 0;
+        var range1 = value <= 100;
+        var range2 = (value > 100) && (value <= 200);
+        var range3 = (value > 200) && (value <= 300);
+        var range4 = (value > 300) && (value <= 400);
+
+        // Set colors for ranges
+        var blue = "#538D9F"
+        var green = "rgb(152, 248, 114)"
+        var yellow = "#ECBF2F"
+        var red = "#ED463A"
+
+        if (rangeStart) {
+            resetTicks;
+        } else if (range1) {
+            resetTicks;
+            sliderElements.css("background", blue);
+            readoutBox.css("color", blue);
+        } else if (range2) {
+            resetTicks;
+            sliderElements.css("background", green);
+            readoutBox.css("color", green);
+        } else if (range3) {
+            resetTicks;
+            sliderElements.css("background", yellow);
+            readoutBox.css("color", yellow);
+        } else if (range4) {
+            sliderElements.css("background", red);
+            readoutBox.css("color", red);
+        };
+    })
 
     $("#preferences-submit-btn").on("click", function () {
         event.preventDefault();
         console.log("saving user preferences");
-        //var currentUserId = firebase.auth().currentUser.uid;
 
-        // Grabs user input
-        //var userName = $("#user-name-input").val().trim();
-        var user = $(this).data("userid");
+        var userid = $(this).data("userid");
 
-        if( user == "undefined") {
+        if (userid == "undefined") {
             //User needs to sign up 
             return;
         }
@@ -243,7 +240,7 @@ $(function () {
         var tempMin = $("#min-temp-slider").slider('getValue');
         var distMax = $("#max-dist-slider").slider('getValue');
 
-        console.log(`userid: ${user}`);
+        console.log(`userid: ${userid}`);
         console.log(`windLimit: ${windLimit}`);
         console.log(`precipLimit: ${precipLimit}`);
         console.log(`tempMin: ${tempMin}`);
@@ -258,9 +255,9 @@ $(function () {
         };
         console.log(newUserPref);
 
-        $.ajax("/api/user/preferences/" + user, {
+        $.ajax("/api/user/preferences/" + userid, {
             type: "POST",
-            data: newUserPref 
+            data: newUserPref
         }).then(
             function (data) {
                 console.log(data);
@@ -273,9 +270,9 @@ $(function () {
         event.preventDefault();
         console.log("saving user profile");
 
-        var user = $(this).data("userid");
-        console.log("saving user id " + user);
-        if( user == "undefined") {
+        var userid = $(this).data("userid");
+        console.log("saving user id " + userid);
+        if (userid == "undefined") {
             //User needs to sign up 
             return;
         }
@@ -295,7 +292,7 @@ $(function () {
         var interest8 = $("#interest1").val();
 
 
-        console.log(`userid: ${user}`);
+        console.log(`userid: ${userid}`);
         console.log(`firstname: ${firstname}`);
         console.log(`lastname: ${lastname}`);
         console.log(`mobile: ${mobile}`);
@@ -319,14 +316,34 @@ $(function () {
         };
         console.log(newUserProf);
 
-        $.ajax("/api/user/profile/" + user, {
+        $.ajax("/api/user/profile/" + userid, {
             type: "POST",
-            data: newUserProf 
+            data: newUserProf
         }).then(
             function (data) {
                 console.log(data);
                 console.log("changed user profile", newUserProf);
             }
         );
+    });
+});
+
+$("document").ready(function(){
+
+    var userid = $("#profile-submit-btn").data("userid");
+    console.log("READY");
+    console.log(userid);
+
+    $.get("/api/user/preferences/" + userid, function (data) {
+        console.log("preferences " + data);
+    });
+    $.get("/api/user/profile/" + userid, function (data) {
+        console.log(data);
+        if (data) {
+            $("#fname-input").val(data.firstname);
+            $("#lname-input").val(data.lastname);
+            $("#mobile-input").val(data.mobile);
+            $("#bio-area").val(data.bio);
+        }
     });
 });
