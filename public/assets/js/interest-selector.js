@@ -35,69 +35,6 @@ $(function () {
         handle: "square",
     });
 
-    
-
-    $(`.interest-slider`).on(`click`, function () {
-        //Crux was to set data-value of parent to easily 'find' children
-        var value = parseInt($(this).find(`input`).val());
-        var resetTicks = $(this).find(`.slider-tick`).css("background", "#F7F7F7");
-        var sliderElements = $(this).find(`.slider-selection.tick-slider-selection, .slider-tick.in-selection, .slider-handle  `)
-        
-        //set parent div to value
-        $(this).attr("data-value", value);
-
-        //turn-on interest button on slide
-        if (value === 0) {
-            $(this).parent().find('.interests-btn').attr('value', 'false').removeClass(`bg-yellow-glass`);
-            // $(this).parent().find('.label-box').data("value", "false");
-        } else {
-            $(this).parent().find('.interests-btn').attr('value', 'true').addClass(`bg-yellow-glass`);
-            // $(this).parent().find('.label-box').data("value", "true");
-        }
-        
-    
-        //Taget .readout div
-        var readout = $(this).parent().find('.readout');
-        var readoutBox = $(this).parent().find('.readout-box')
-        if (value = 10) {
-            readout.text(value);
-        } else {
-            readout.text(`${value}`);
-        }
-        
-        // Set ranges
-        var rangeStart = 0;
-        var range1 = value <= 3;
-        var range2 = (value > 3) && (value <= 6);
-        var range3 = (value > 6) && (value <= 8);
-        var range4 = (value > 8) && (value <= 10);
-        
-        // Set colors for ranges
-        var blue = "#538D9F"
-        var green = "rgb(152, 248, 114)"
-        var yellow = "#ECBF2F"
-        var red = "#ED463A"
-        
-        if (rangeStart) {
-            resetTicks;
-        } else if (range1) {
-            resetTicks;
-            sliderElements.css("background", blue);
-            readoutBox.css("color", blue);
-        } else if (range2) {
-            resetTicks;
-            sliderElements.css("background", green);
-            readoutBox.css("color", green);
-        } else if (range3) {
-            resetTicks;
-            sliderElements.css("background", yellow);
-            readoutBox.css("color", yellow);
-        } else if (range4) {
-            sliderElements.css("background", red);
-            readoutBox.css("color", red);
-        };
-    })
-
     $(`.interest-slider`).on(`slide`, function () {
         //Crux was to set data-value of parent to easily 'find' children
         var value = parseInt($(this).find(`input`).val());
