@@ -5,7 +5,10 @@
     "database": "14ers_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
+<<<<<<< HEAD
    
+=======
+>>>>>>> 22760c2374c34d7d1afc1acee67ab876526f94d3
   },
   "test": {
     "username": "root",
