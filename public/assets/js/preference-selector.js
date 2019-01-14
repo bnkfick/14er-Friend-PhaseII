@@ -224,6 +224,12 @@ $(function () {
     };
   })
 
+
+
+
+
+
+  
     $("#preferences-submit-btn").on("click", function () {
         event.preventDefault();
         console.log("saving user preferences");
