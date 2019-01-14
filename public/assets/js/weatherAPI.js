@@ -78,7 +78,7 @@ $("document").ready(function(){
     };
 
     $.get("api/mountains/", function(data){
-        console.log(data);
+        // console.log(data);
         for(var i = 0; i < data.length; i++) {
             var target = i + 1;
             var link = data[i].weatherLink;
