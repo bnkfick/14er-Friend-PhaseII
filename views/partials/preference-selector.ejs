@@ -5,7 +5,7 @@
         <div id="toggle-preference-box" class="row align-items-center justify-content-end">
             <div class="col-11">
                 <!-- Insert First name into h4? -->
-                <h4 class="ls-25 mb-0">Climbing Preferences</h4>
+                <h4 class="ls-25 mb-0">Climbing Condition Preferences</h4>
             </div>
             <div class="col-1 text-right">
                 <i id="preference-btn" role="button" class="fas  fa-plus-square fa-minus-square fa-2x"></i>
@@ -68,7 +68,7 @@
                 <div class="form-group row mt-5">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-8">
-                        <button id="preferences-submit-btn" class="btn btn-outline-light" type="submit" user-preferences-btn">Save</button>
+                        <button id="preferences-submit-btn" data-userid="<%=user%>"  class="btn btn-outline-light" type="submit">Save</button>
                     </div>
                 </div>
                 
@@ -120,7 +120,7 @@
                         <div class="form-group row">
                             <div class="col-sm-6"></div>
                             <div class="col-sm-6">
-                                <button id="preferences-submit-btn" class="btn bg-yellow" type="submit" user-preferences-btn">Save</button>
+                                <button id="preferences-submit-btn" data-userid="<%=user%>" class="btn bg-yellow" type="submit"">Save</button>
                             </div>
                         </div>
                     </div>
