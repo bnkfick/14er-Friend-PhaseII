@@ -1,6 +1,29 @@
 $(function () {
     //Everything inside this function! :)
+    function interestBtnState() {
+        var btn = $(`#toggle-show-interests-btn`);
+        if ($(`#interest-box:visible`)) {
+            btn.removeClass(`fa-plus-square`);
+        } else {
+            btn.addClass(`fa-plus-square`);
+        }
+    }
 
+    interestBtnState();
+
+    $(`#interests`).on('click', `#toggle-show-interests-btn`, function () {
+        var btn = $(`#toggle-show-interests-btn`)
+
+        if (btn.hasClass(`fa-plus-square`)) {
+            btn.removeClass(`fa-plus-square`)
+        } else {
+            btn.addClass(`fa-plus-square`);
+            // $(this).parent().parent().parent().addClass(`ptb-25`)
+        };
+        $(`#interest-box`).slideToggle(500, `swing`, function () {
+
+        });
+    })
     
     //Sliders==========================================================
     //Credit for basic to https://seiyria.com/bootstrap-slider/#example-13
@@ -36,7 +59,7 @@ $(function () {
         //Taget .readout div
         var readout = $(this).parent().find('.readout');
         var readoutBox = $(this).parent().find('.readout-box')
-        if (value < 10) {
+        if (value = 10) {
             readout.text(value);
         } else {
             readout.text(`${value}`);

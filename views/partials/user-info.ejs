@@ -2,16 +2,16 @@
 <!--Hidden Until Signed In-->
 <section id="user-info" class="mt-8 spec-text">    
     <div class="container glass">
-        <div id="user-info-box" class="row align-items-center justify-content-end">
+        <div id="user-info" class="row align-items-center justify-content-end">
             <div class="col-11">
                 <!-- Insert First name into h4? -->
                 <h4 class="ls-25 mb-0">Your Info</h4>
             </div>
             <div class="col-1 text-right">
-                <i id="user-info-btn" role="button" class="fas  fa-plus-square fa-minus-square fa-2x"></i>
+                <i id="toggle-user-info-btn" role="button" class="fas  fa-plus-square fa-minus-square fa-2x"></i>
             </div>
         </div>
-        <div id="preference-box" class="mt-5">
+        <div id="user-info-box" class="mt-5">
             <form>
                 <!--User Name, Address, Phone, Profile Pic, Change Password, Notification Preferences (Email, Text, Both)-->
                 <!--Social Media: Create Group. Add/invite friends to Group communication.  Link Facebook, Twitter, Instagram-->
@@ -65,7 +65,7 @@
                 <div class="form-group row mt-5">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-8">
-                        <button id="profile-submit-btn" data-userid="<%=user%>" class="btn btn-outline-light" type="submit">Save</button>
+                        <button id="profile-submit-btn" data-userid="<%=user%>" class="btn btn-outline-light submit-btn" type="submit">Save</button>
                     </div>
                 </div>
             </form>
