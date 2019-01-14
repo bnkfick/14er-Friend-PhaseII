@@ -50,17 +50,20 @@ module.exports = function (app) {
 
   //Tap the mountain-api-routes with :name
   app.get('/mountain/', (req, res) => {
-    res.render('pages/mountain');
+    var user = req.user;
+    res.render('pages/mountain', { user });
   });
   
   app.get('/dev-team', (req, res) => {
-    res.render('pages/dev-team');
+    var user = req.user;
+    res.render('pages/dev-team', { user });
   });
 
   //Rough out APIs used.  Good resource links.  Challenges. CodePen demos.
   //Also Credits to photos
   app.get('/technologies', (req, res) => {
-    res.render('pages/technologies');
+    var user = req.user;
+    res.render('pages/technologies', { user });
   });
 
   //Eventually want to be able to monitor content being submitted by user (photos/comments)
@@ -68,7 +71,8 @@ module.exports = function (app) {
   //Also want to be able to push out text/emal/mobile alerts...road closure/avi danger/accident reports/missing hikers/forest fires/thunderstorms/etc.
   //Will need to pass admin approved :id to unlock and access
   app.get('/admin', (req, res) => {
-    res.render('pages/admin');
+    var user = req.user;
+    res.render('pages/admin', { user });
   });
 
 
