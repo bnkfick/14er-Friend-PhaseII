@@ -20,14 +20,21 @@
         <!--Navigation Bar -->
         <% include ../partials/header %>
     </header>
-    
-        <% include ../partials/about %>
-        
-        <!-- User login & Set Preferences -->
-        <% include ../partials/preference-selector %>
+        <div id="#wrap">
+            <section class="mt-8">
+                <% include ../partials/about %>
+                <!-- User login & Set Preferences -->
+                <% include ../partials/preference-selector %>
+            
+                <!--NOTE: The mtn-route-table partial is nested in the mtn-table partial  -->
+                <% include ../partials/mtn-table %>
+            </section>
+        </div>
+                
 
-        <!--NOTE: The mtn-route-table partial is nested in the mtn-table partial  -->
-        <% include ../partials/mtn-table %>
+        
+
+        
     
 
     <footer>
