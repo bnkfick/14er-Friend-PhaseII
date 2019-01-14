@@ -44,8 +44,15 @@ module.exports = function (app) {
   app.get('/climber-settings', function (req, res) {
     var user = req.user;
     res.render('pages/climber-settings', { user });
-  })
+  });
+  app.get('/devTeam', function (req, res) {
+    var user = req.user;
+    res.render('pages/devTeam');
+  });
+
 };
+
+
 //      res.render('pages/index', { mtns }  )) doesn't work
 //      res.render('pages/index', mtns  )) doesn't work 
 //      res.render('pages/index', { mtns: mtns }  ))  works 

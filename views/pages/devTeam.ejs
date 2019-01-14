@@ -2,78 +2,81 @@
 <html lang="en-us">
 
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <title>Team Portfolio</title>
-  <link rel="stylesheet" href="pages/view/assets/css/devTeam.css">
-  <script src='ejs_production.js'></script>
+  <% include ../partials/head %>
+  
 </head>
 
 <body>
+    <% include ../partials/header %>
   <div id="main-container">
     <div class="main-section">
       <h1>Meet The Team</h1>
       <hr>
-      <div class="main-port-container"> 
-      <div class="port-container">
-      <h3>Adam Chapman</h3>
-      <div class = "img-fluid">
-      <img src="assets/css/images/achapman-profile.png" alt="Adam">
-    </div>
-      <div class="link-container">
-          <a href ="https://github.com/achapman77">Github</a>
-          <a href ="https://www.linkedin.com/in/adamachapman/">LinkedIn</a>
-          <a href ="https://stackoverflow.com/users/3826587/adam-chapman?tab=profile">Stack Overflow</a>
-      </div>
-    </div>
-    
+      <div class="main-port-container">
+        <div class="port-container">
+          <h3>Adam Chapman</h3>
 
-    <div class="port-container">
+          <img src="assets/css/images/achapman-profile.png" width="250" height="250" alt="Adam">
 
-        <h3>Barbara Fick</h3>
-      
-        <img src="assets/css/images/barbprofile.jpg" width="250" height="250" alt="Barbara">
-      <div class="link-container">
-        <a href ="https://github.com/bnkfick">Github</a>
-          <a href ="https://www.linkedin.com/in/barbara-fick-266110176/">LinkedIn</a>
-          <a href ="#">Twitter</a>
-      </div>
-    </div>
-    <div class="port-container">
-
-        <h3>Brayden Copley</h3>
-      
-        <img src="assets/css/images/Braydenprofile.jpg" width="250" height="250" alt="Brayden Copley">
-      <div class="link-container">
-       <a href ="https://github.com/braydenc303">Github</a>
-          <a href ="https://www.linkedin.com/in/brayden-copley-9bb0b35/">LinkedIn</a>
-          <a href ="#">Twitter</a>
-      </div>
-    </div>
-    <div class="port-container">
-      
-       <h3>Roxanne Koven</h3>
-
-       <img src="assets/css/images/Facepic.jpg" width="250" height="250" alt="Roxanne Koven">
-      <div class="link-container">
-      <a href ="https://github.com/rkoven74">Github</a>
-          <a href ="https://www.linkedin.com/in/roxanne-koven-257a5b85/">LinkedIn</a>
-          <a href ="#">Twitter</a>
-      </div>
-      </div>
-      </div>
+          <div class="link-container">
+            <a href="https://github.com/achapman77">Github</a>
+            <a href="https://www.linkedin.com/in/adamachapman/">LinkedIn</a>
+            <a href="https://stackoverflow.com/users/3826587/adam-chapman?tab=profile">Stack Overflow</a>
+          </div>
         </div>
-    
 
-    
+
+        <div class="port-container">
+
+          <h3>Barbara Fick</h3>
+
+          <img src="assets/css/images/barbprofile.jpg" width="250" height="250" alt="Barbara">
+          <div class="link-container">
+            <a href="https://github.com/bnkfick">Github</a>
+            <a href="https://www.linkedin.com/in/barbara-fick-266110176/">LinkedIn</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+        <div class="port-container">
+
+          <h3>Brayden Copley</h3>
+
+          <img src="assets/css/images/Braydenprofile.jpg" width="250" height="250" alt="Brayden Copley">
+          <div class="link-container">
+            <a href="https://github.com/braydenc303">Github</a>
+            <a href="https://www.linkedin.com/in/brayden-copley-9bb0b35/">LinkedIn</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+        <div class="port-container">
+
+          <h3>Roxanne Koven</h3>
+
+          <img src="assets/css/images/Facepic.jpg" width="250" height="250" alt="Roxanne Koven">
+          <div class="link-container">
+            <a href="https://github.com/rkoven74">Github</a>
+            <a href="https://www.linkedin.com/in/roxanne-koven-257a5b85/">LinkedIn</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
   </div>
-   <p>
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-    when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-    typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with 
+  <p>
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+    standard dummy text ever since the 1500s,
+    when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not
+    only five centuries, but also the leap into electronic
+    typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+    containing Lorem Ipsum passages, and more recently with
     desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
   </p>
-  
+
+  <% include ../partials/footer %>
+  <% include ../partials/js-script-tags %>
 </body>
 
 </html>
