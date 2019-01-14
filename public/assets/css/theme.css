@@ -1,9 +1,14 @@
 html,
 body {
+    height: 100%;
     margin: 0;
     font-family: 'Poppins', sans-serif;
+    color: whitesmoke
 }
 
+#wrap{
+    min-height: 100%;
+}
 .spec-text {
     font-family: 'Special Elite', cursive;
     
@@ -23,7 +28,18 @@ body {
 }
 
 section {
-    margin: 5em 0;
+    /* margin: 5em 0; */
+    overflow: auto;
+    padding-bottom: 5rem;
+}
+
+footer {
+    position: relative;
+    margin-top: 15rem;
+    height: 10rem;
+    clear: both;
+    padding-top: rem
+
 }
 
 table,
@@ -33,9 +49,9 @@ thead {
     color: whitesmoke
 }
 
-h1 {
+/* h1 {
     border-bottom: 1px solid whitesmoke;
-}
+} */
 
 .flex-row {
     display: flex;
@@ -45,6 +61,13 @@ h1 {
 
 .btn {
     width: 10em;
+}
+
+.submit-btn {
+    /* background-color: rgb(30, 201, 255); */
+    /* float: left; */
+    width: 30rem;
+    font-size: 1.5rem;
 }
 
 i:hover {
@@ -63,21 +86,102 @@ i:hover {
 .red {
     color: #ED463A;
 }
-.bg-red {
-    background-color: #ED463A;
-}
 .yellow {
     color: #ECBF2F;
-}
-.bg-yellow {
-    background-color: #ECBF2F;
 }
 .blue {
     color: #538D9F;
 }
+.bg-red {
+    background-color: #ED463A;
+}
+
+.bg-yellow {
+    background-color: #ECBF2F;
+}
+
 .bg-blue {
     background-color: #538D9F;
 }
+.bg-red-glass {
+    background-color: rgba(237, 70, 58, 0.406);
+    backdrop-filter: blur(5px);   
+    -webkit-backdrop-filter: blur(5px);  
+}
+
+.bg-yellow-glass {
+    background-color: rgba(236, 192, 47, 0.406);
+    backdrop-filter: blur(5px);   
+    -webkit-backdrop-filter: blur(5px);  
+}
+
+.bg-blue-glass {
+    background-color: rgba(83, 141, 159, 0.406);
+    backdrop-filter: blur(5px);   
+    -webkit-backdrop-filter: blur(5px);  
+}
+
+.bg-white-glass {
+    background-color: rgba(83, 141, 159, 0.406);
+    backdrop-filter: blur(5px);   
+    -webkit-backdrop-filter: blur(5px);  
+}
+
+.bdr-red {
+    border: 3px solid;
+    border-color: rgba(237, 70, 58, 0.406);
+}
+
+.bdr-yellow {
+    border: 3px solid;
+    border-color: rgba(236, 192, 47, 0.406);
+}
+
+.bdr-blue {
+    border: 3px solid;
+    border-color: rgba(83, 141, 159, 0.406);
+}
+
+/* .bdr-red:hover {
+    border-color: rgba(237, 70, 58, 0.406);
+    background-color: rgba(237, 70, 58, 0.406);
+    backdrop-filter: blur(5px);   
+    -webkit-backdrop-filter: blur(5px); 
+}
+
+.bdr-yellow:hover {
+    border-color: rgba(236, 192, 47, 0.406);
+    background-color: rgba(236, 192, 47, 0.406);
+    backdrop-filter: blur(5px);   
+    -webkit-backdrop-filter: blur(5px);  
+}
+
+.bdr-blue:hover {
+    border-color: rgba(83, 141, 159, 0.406);
+    background-color: rgba(83, 141, 159, 0.406);
+    backdrop-filter: blur(5px);   
+    -webkit-backdrop-filter: blur(5px);  
+} */
+
+/* Backgrounds */
+.glass {
+    /* width: 100%; */
+    background-color: rgba(19, 18, 18, 0.671);
+    backdrop-filter: blur(5px);   
+    -webkit-backdrop-filter: blur(5px);  
+    padding: 0 1em 0 1em;
+    /* color: whitesmoke; */
+
+}
+
+.partial-header {
+    background-color: rgba(19, 18, 18, 0.671);
+    backdrop-filter: blur(5px);   
+    -webkit-backdrop-filter: blur(5px);  
+    padding: 1em;
+    border-bottom: 1px solid whitesmoke;
+}
+
 /* Padding Classes*/
 .ptb-25{
     padding-top: 0.25rem !important;
@@ -141,18 +245,7 @@ i:hover {
     line-height: 3rem;
 }
 
-/* Backgrounds */
-.glass {
-    width: 100%;
-    background-color: rgba(19, 18, 18, 0.671);
-    /* Experimental Feature must be turned on in chrome://flags/ 
-        -->Experimental Web Platform Features */
-    backdrop-filter: blur(5px);   
-    -webkit-backdrop-filter: blur(5px);  
-    padding: 1.5em;
-    color: whitesmoke;
 
-}
 
 /* .container {
     background-color: rgba(85, 85, 85, 0.406);
