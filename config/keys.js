@@ -1,9 +1,9 @@
 require("dotenv").config();
 
 module.exports.google = {
-    key: process.env.API_KEY,
     clientID: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRET
+    clientSecret: process.env.CLIENT_SECRET,
+    key: process.env.API_KEY
 };
 
 module.exports.session = {
