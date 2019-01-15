@@ -15,15 +15,7 @@
             <form>
                 <!--User Name, Address, Phone, Profile Pic, Change Password, Notification Preferences (Email, Text, Both)-->
                 <!--Social Media: Create Group. Add/invite friends to Group communication.  Link Facebook, Twitter, Instagram-->
-                <% 
-                var user = " ";
-                if (typeof userProf === 'undefined') { 
-                    user = " ";
-                } else {
-                    user = userProf;
-                }
-                console.log(user);
-                %> 
+               
                 <div class="row">
                     
                     <div class="col-md-6">
@@ -47,20 +39,7 @@
                         </div>
                     </div>
                     
-                    <% 
-                    var userid = " ";
-                    if (typeof user === 'undefined') { 
-                        userid = " ";
-                        console.log("USER Profile user IS UNDEFINED");
-                    } else {
-                        userid = user.id;
-                        console.log("USER Profile user IS DEFINED");
-                        console.log(user);
-                        console.log(user.id);
-                        console.log(userid);
-                        console.log(user.user_name);
-                    }
-                    %>
+                   
                     <div class="col-md-6">
                         <!-- GET CSS AND JS HERE: https://bootsnipp.com/snippets/eNbOa -->
                         <div class="form-group row">
@@ -86,7 +65,15 @@
                 <div class="form-group row mt-5">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-8">
-                        <button id="profile-submit-btn" data-userid="<%=user.id%>" class="btn btn-outline-light submit-btn mb-5" type="submit">Save</button>
+                            <% 
+                            var userid = " ";
+                            if (typeof user === 'undefined') { 
+                                userid = " ";
+                            } else {
+                                userid = user.id;
+                            }
+                            %>    
+                        <button id="profile-submit-btn" data-userid="<%=userid%>" class="btn btn-outline-light submit-btn mb-5" type="submit">Save</button>
                     </div>
                 </div>
             </form>

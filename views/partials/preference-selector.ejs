@@ -74,14 +74,9 @@
                             console.log("USER IS UNDEFINED");
                         } else {
                             userid = user.id;
-                            console.log("USER IS DEFINED");
-                            console.log(user);
-                            console.log(user.id);
-                            console.log(userid);
-                            console.log(user.user_name);
                         }
                         %>    
-                        <button id="preferences-submit-btn" data-userid="<%=user.id%>"  class="btn btn-outline-light submit-btn mb-5" type="submit">Save</button>
+                        <button id="preferences-submit-btn" data-userid="<%=userid%>"  class="btn btn-outline-light submit-btn mb-5" type="submit">Save</button>
                     </div>
                 </div>
                 

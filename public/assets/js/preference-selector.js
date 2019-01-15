@@ -340,14 +340,14 @@ $("document").ready(function(){
     console.log(userid);
 
     $.get("/api/user/preferences/" + userid, function (data) {
-        console.log("preferences " + data);
-        $("#min-temp-slider").val(75);
-        $("#max-wind-slider").val(75);
-        $("#max-precip-slider").val(75);
-        $("#max-dist-slider").val(75);
+        console.log(`preferences ${data}`);
+        //$("#min-temp-slider").val(75);
+        //$("#max-wind-slider").val(75);
+        //$("#max-precip-slider").val(75);
+        //$("#max-dist-slider").val(75);
     });
     $.get("/api/user/profile/" + userid, function (data) {
-        console.log(data);
+        console.log(`profile ${data}`);
         if (data) {
             $("#fname-input").val(data.firstname);
             $("#lname-input").val(data.lastname);
