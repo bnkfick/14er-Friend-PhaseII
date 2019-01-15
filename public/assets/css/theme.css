@@ -23,7 +23,8 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     /* background-position: center; */
-    /* background-size: cover; */
+   
+    background-size: cover;
     text-align: center
 }
 
@@ -36,18 +37,13 @@ section {
 footer {
     position: relative;
     margin-top: 15rem;
-    height: 10rem;
+    height: 15rem;
     clear: both;
     padding-top: rem
 
 }
 
-table,
-thead {
-    margin: 0 !important;;
-    padding: 0 !important;
-    color: whitesmoke
-}
+
 
 /* h1 {
     border-bottom: 1px solid whitesmoke;

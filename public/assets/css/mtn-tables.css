@@ -1,3 +1,48 @@
+table,
+thead {
+    margin: 0 !important;;
+    padding: 0 !important;
+    color: whitesmoke;
+    text-align: center;
+    background-color: transparent;
+    background: transparent;
+}
+
+tbody {
+    border-bottom: 1px solid whitesmoke;
+}
+
+#table-list {
+    padding: 0;
+}
+
+tr{
+    height: 7rem;
+    background-color: transparent;
+    background: transparent;
+}
+td {
+    font-weight: bold;
+    font-size: 1em;
+    border: none;
+}
+.mh0 {
+    height: 0;
+}
+#hideMe{
+    padding: 0 !important;
+}
+#hideMe2{
+    padding: 0 !important;
+}
+
+.ghost{
+    color: transparent;
+}
+
+/* .conditions {
+    min-height: 12rem;
+} */
 /* .mtn-template {
     display: none;
 }
@@ -10,10 +55,10 @@
     color: black;
 }
 
-.table {
+/* .table {
     margin: 0;
     padding: 0;
-}
+} */
 
 .thead-hide {
     visibility: collapse;
@@ -23,29 +68,76 @@
     background-color: rgba(37, 39, 37, 0.5);
 }
 
-td {
-    font-weight: bold;
-    font-size: 1em;
+
+
+/* Table width classes */
+.w2 {
+    min-width: 2rem;
 }
 
-/* th {
-    padding: 0;
-    margin: 0;
-} */
-.th-sm{
-    width: 5em;
+.w4 {
+    min-width: 4rem;
 }
 
-.th-md {
-    width: 10em;
+.w6 {
+    min-width: 6rem;
 }
 
-.th-lg {
-    width: 15em;
+.w8 {
+    min-width: 8rem;
 }
 
-.th-xl {
-    width: 20em;
+.w10{
+    min-width: 10rem;
+}
+
+.w12{
+    min-width: 12rem;
+}
+
+.w14{
+    min-width: 14rem;
+}
+.w16{
+    min-width: 16rem;
+}
+.w18{
+    min-width: 18rem;
+}
+.w20{
+    min-width: 20rem;
+}
+.w22{
+    min-width: 22rem;
+}
+.w24{
+    min-width: 24rem;
+}
+
+/* Table Height Classes */
+.h2 {
+    min-height: 2rem;
+}
+.h3 {
+    min-height: 3rem;
+}
+.h4 {
+    min-height: 4rem;
+}
+.h5 {
+    min-height: 5rem;
+}
+.h6 {
+    min-height: 5rem;
+}
+.h7 {
+    min-height: 5rem;
+}
+.h8 {
+    min-height: 5rem;
+}
+.h9 {
+    min-height: 9rem;
 }
 
 .name {
@@ -59,8 +151,8 @@ td {
     background-position: center;
 }
 .trailmap {
-    width:600;
-    height: 450;
+    width: 100%;
+    height: 100%;
     border:0;
 }
 #td-route-beta {
