@@ -44,14 +44,14 @@ passport.use(
         //check if user already exists in our database
         db.User.findOne({
             where: {
-                google_id: profile.googleId
+                google_id: profile.id
             }
         }).then(function (data) {
             //console.log(`hit db for user data ${data}`);
             if (!data) {
                 db.User.create({
                     user_name: profile.displayName,
-                    google_id: profile.googleId,
+                    google_id: profile.id,
                     thumbnail: profile._json.image.url
                 }).then(function (data) {
                     //console.log(`New User created:  ${data}`);
