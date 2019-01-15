@@ -5,36 +5,36 @@ trails.forEach(function(trail) {
     if (mtn.id === trail.MountainId) {
 %>
 <table id="route-<%=trail.id%>" class="route-template table sub-table">
-    <thead class="thead-gray thead-hide">
+    <thead class="thead-hide">
         <tr>
-            <th class="th-xl">Route Name</th>
-            <th class="th-md">Mileage</th>
-            <th class="th-md">Gain (ft.)</th>
-            <th class="th-md">Difficulty</th>
-            <th class="th-lg">Fall Exposure</th>
-            <th class="th-md">Route Beta</th>
+            <th class="w20">Route Name</th>
+            <th class="">Mileage</th>
+            <th class="">Gain (ft.)</th>
+            <th class="">Difficulty</th>
+            <th class="">Fall Exposure</th>
+            <th class="w2">Route Beta</th>
         </tr>
     </thead>
     <tbody>
         <!--Dynamically render route #-->
         <tr class="route-info">
-            <td class="route-name"><%=trail.routeName%></td>
-            <td class="route-mileage"><%=trail.mileage%></td>
-            <td class="route-gain"><%=trail.gain%></td>
-            <td class="route-difficulty" ><%=trail.difficulty%></td>
-            <td class="route-exposure">
-                <div class="progress" style="height:2.5em">
+            <td class="route-name align-middle"><%=trail.routeName%></td>
+            <td class="route-mileage align-middle"><%=trail.mileage%></td>
+            <td class="route-gain align-middle"><%=trail.gain%></td>
+            <td class="route-difficulty align-middle" ><%=trail.difficulty%></td>
+            <td class="route-exposure align-middle">
+                <div class="progress align-middle" style="height:2.5em">
                     <div class="bg-success progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
                         style="width: 25%" value="<%=trail.exposure%>"><%=trail.exposure%></div>
                 </div>
             </td>
-            <td class="toggle-show-route-beta-btn"><i id="<%=trail.id%>" class="fas fa-map-marked-alt fa-map-marked fa-2x"></i></td>
+            <td class="toggle-show-route-beta-btn align-middle"><i id="<%=trail.id%>" class="fas fa-map-marked-alt fa-map-marked fa-2x"></i></td>
         </tr>
 
 
         <!--Route Map and Description View-->
-        <tr>
-            <td colspan="6">
+        <tr class="mh0 ">
+            <td id="hideMe2" colspan="6">
                 <div id="<%=trail.id%>-beta" class="row route-beta">
                     <div class="col-md-7 routeMapEmbed">
                             <iframe class="trailmap" frameborder="0" src="<%=trail.routeMapEmbed%>"></iframe>

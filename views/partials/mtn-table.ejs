@@ -1,18 +1,18 @@
-<section>
-        <div id="table-list" class="container">
-            <table id="mtn-render" class="table glass">
-                <thead class="thead-dark">
+
+        <div id="table-list" class="container glass">
+            <table id="mtn-render" class="table ">
+                <thead class="thead-dark align-middle">
                     <tr>
-                        <th class="th-sm align-middle">Favorite</th>
-                        <th class="th-sm align-middle">Rank</th>
-                        <th class="th-md align-middle">Mountain</th>
-                        <th class="th-md align-middle">Elevation</th>
-                        <th class="th-md align-middle">Wind Direction</th>
-                        <th class="th-md align-middle">Wind Speed</th>
-                        <th class="th-md align-middle">Current Temp</th>
-                        <th class="th-md align-middle">Short Forecast</th>
-                        <th class="th-md align-middle">Distance to You</th>
-                        <th class="th-sm"></th>
+                        <th class="w2  h9 align-middle">Favorite</th>
+                        <th class="w2  align-middle">Rank</th>
+                        <th class="w10  align-middle">Mountain</th>
+                        <th class="w8  align-middle">Elevation</th>
+                        <th class="w8  align-middle">Wind Direction</th>
+                        <th class="w8  align-middle">Wind Speed</th>
+                        <th class="w8  align-middle">Current Temp</th>
+                        <th class="w10  align-middle">Short Forecast</th>
+                        <th class="w6 align-middle">Distance from You</th>
+                        <th class="w2  align-middle"><i class="fas fa-plus-square fa-minus-square fa-2x ghost"></i></th>
                     </tr>
                 </thead>
             </table>
@@ -21,19 +21,19 @@
             %>
                 
             <!--Mtn-X-Table **Dynamially render mtn-# based on array-->
-            <table id="mtn-<%=mtn.id%>" class="mtn-template table glass">
+            <table id="mtn-<%=mtn.id%>" class="mtn-template table">
                 <thead class="thead-dark thead-hide">
                     <tr>
-                        <th class="th-sm">Favorite</th>
-                        <th class="th-sm">Rank</th>
-                        <th class="th-md">Mountain</th>
-                        <th class="th-md">Elevation</th>
-                        <th class="th-md">Wind Direction</th>
-                        <th class="th-md">Wind Speed</th>
-                        <th class="th-md">Current Temp</th>
-                        <th class="th-md">Short Forecast</th>
-                        <th class="th-md">Distance to You</th>
-                        <th class="th-sm"></th>
+                        <th class="w2">Favorite</th>
+                        <th class="w2">Rank</th>
+                        <th class="w10">Mountain</th>
+                        <th class="w8">Elevation</th>
+                        <th class="w8">Wind Direction</th>
+                        <th class="w8">Wind Speed</th>
+                        <th class="w8">Current Temp</th>
+                        <th class="w10">Short Forecast</th>
+                        <th class="w6">Distance to You</th>
+                        <th class="w2"><i class="fas fa-plus-square fa-minus-square fa-2x"></i></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,18 +55,18 @@
 
 
                     <!-- Routes sub-Table -->
-                    <tr>
-                        <td colspan="9">
+                    <tr class="mh0 ">
+                        <td id="hideMe" colspan="10 px0">
                             <div id="<%=mtn.id%>-routes" class="routes-table">
                                 <table id="route-render" class="table sub-table">
-                                    <thead class="thead-gray sub-table">
-                                        <tr>
-                                            <th class="th-xl">Route Name</th>
-                                            <th class="th-md">Mileage</th>
-                                            <th class="th-md">Gain (ft.)</th>
-                                            <th class="th-md">Difficulty</th>
-                                            <th class="th-lg">Fall Exposure</th>
-                                            <th class="th-md">Route Beta</th>
+                                    <thead class="glass sub-table">
+                                        <tr class="">
+                                            <th class="w20 align-middle">Route Name</th>
+                                            <th class="align-middle">Mileage</th>
+                                            <th class="align-middle">Gain (ft.)</th>
+                                            <th class="align-middle">Difficulty</th>
+                                            <th class="align-middle">Fall Exposure</th>
+                                            <th class="w2 align-middle">Route Beta</th>
                                         </tr>
                                     </thead>
                                 </table>
@@ -81,5 +81,3 @@
             
         <% });//end for loop over mountains %>
         </div>
-        <!--End Table-List Container-->
-    </section>
