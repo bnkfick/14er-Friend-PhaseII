@@ -27,10 +27,3 @@ UserPreference.associate = function(models) {
 
 return UserPreference;
 };
-
-// userId: currentUserId,
-// userName: userName,
-// windLimit: windLimit,
-// precipLimit: precipLimit,
-// tempMin: tempMin,
-// tempMax: tempMax

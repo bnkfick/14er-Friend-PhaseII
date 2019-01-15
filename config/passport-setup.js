@@ -18,7 +18,7 @@ passport.deserializeUser((id, done) => {
             id: id
         }
     }).then(function (data) {
-        done(null, id);
+        done(null, data);
     });
 });
 
@@ -35,30 +35,30 @@ passport.use(
         //function called done
     }, (accessToken, refreshToken, profile, done) => {
         // passport callback function
-        console.log("passport callback function fired");
-        console.log(`retrieved google profile ${profile}`);
+        //console.log("passport callback function fired");
+        console.log(`retrieved google profile `);
+        console.log(profile);
         //now take some of this data and save that in our database
         //interacting wtih the db via the User model
 
         //check if user already exists in our database
         db.User.findOne({
             where: {
-                google_id: profile.googleId
+                google_id: profile.id
             }
         }).then(function (data) {
-            console.log(`hit db for user data ${data}`);
-            //is this the way to check for 0/1 record?
+            //console.log(`hit db for user data ${data}`);
             if (!data) {
                 db.User.create({
                     user_name: profile.displayName,
-                    google_id: profile.googleId,
+                    google_id: profile.id,
                     thumbnail: profile._json.image.url
                 }).then(function (data) {
-                    console.log(`New User created:  ${data}`);
+                    //console.log(`New User created:  ${data}`);
                     done(null, data);
                 });
             } else {
-                console.log(`User ${data.user_name} already exists`);
+                //console.log(`User ${data.user_name} already exists`);
                 done(null, data);
             }
 

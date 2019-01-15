@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
       },
       //identify returning users with googleId
       google_id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         defaultValue: false
       },
       thumbnail: {

@@ -10,8 +10,7 @@ module.exports = function (app) {
     //auth login
     app.get("/login", (req, res) => {
         console.log("/login");
-        //I can send req.user when we switch to a rendering engine like handlebars or vue
-        res.sendFile(path.join(__dirname, "../public/views/login.html"));
+        res.redirect('/');
     });
 
 

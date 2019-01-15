@@ -11,13 +11,87 @@
     </header>
 
     <!-- New code goes here========================= -->
+    <div style="text-align:left;" id="technologies" class="container glass">
+        <h1>OAuth</h1>
+        <ul>
+            <li>What Is It?</li>
+        </ul>
+        <h1>OAuth</h1>
+        <ul>
+            <li>What Is It?</li>
+            <p>
+                It stands for Open Authorization and it is one approach to authenticating users inside our application.
+                (other options JsonWebTokens, Hawk?.)
+            </p>
+            <p>
+                Basically, it allows users to log into our app using 3rd party services such as Facebook, Google,
+                GitHub or LinkedIn or one of our social profiles if we have one.
+            </p>
+            <li>Why use it?</li>
+            <p>One less thing to worry about as a developer. </p>
+
+            <p>And for users</p>
+            Users may find it easier because they can just use a username and password that they already have.
+            <p>Instead of filling out a form and remembering a new username and password</p>
+            <p>And maybe people just prefer using a few central identities like facebook or google so that they can
+                login anywhere.</p>
+        </ul>
+        <h2>Google</h2>
+        <p>Go to console.developers.google.com, SET UP googe+ api key to get login/user info</p>
+
+        <img style="width:100%;" src="/assets/img/OAuth.png">
+        <h2>GOOGLE OBJECT</h2>
+        <code style="color: #ddd;">
+    profile for person logged in via google
+    { id: 'DDDDDDDDDDDDDDDD',
+      displayName: 'Gotta Name',
+      name: { familyName: Name, givenName: 'Gotta' },
+      photos: 
+       [ { value: 'https://lh4.googleusercontent.com/-qKRqcqSW1KQ/AAAAAAAAAAI/AAAAAAAAAAA/AKxrwcbnBm9wofJAL-mgNr09yt8aM5ZIag/mo/photo.jpg?sz=50' } ],
+      gender: undefined,
+      provider: 'google',
+      _raw: '{\n "kind": "plus#person",\n "etag": "\\"jb1Xzanox6i8Zyse4DcYD8sZqy0/fE9yxtcSRIpmh1YsSFRVPwATpZE\\"",\n "objectType": "person",\n "id": "DDDDDDDDDDDDDDDDDDDDD",\n "displayName": "Gotta Name",\n "name": {\n  "familyName": "Name",\n  "givenName": "Gotta"\n },\n "image": {\n  "url": "https://lh4.googleusercontent.com/-qKRqcqSW1KQ/AAAAAAAAAAI/AAAAAAAAAAA/AKxrwcbnBm9wofJAL-mgNr09yt8aM5ZIag/mo/photo.jpg?sz=50",\n  "isDefault": true\n },\n "isPlusUser": false,\n "language": "en",\n "verified": false\n}\n',
+      _json: 
+       { kind: 'plus#person',
+         etag: '"jb1Xzanox6i8Zyse4DcYD8sZqy0/fE9yxtcSRIpmh1YsSFRVPwATpZE"',
+         objectType: 'person',
+         id: '109975941937054835177',
+         displayName: 'Barbara Fick',
+         name: { familyName: 'Fick', givenName: 'Barbara' },
+         image: 
+          { url: 'https://lh4.googleusercontent.com/-qKRqcqSW1KQ/AAAAAAAAAAI/AAAAAAAAAAA/AKxrwcbnBm9wofJAL-mgNr09yt8aM5ZIag/mo/photo.jpg?sz=50',
+            isDefault: true },
+         isPlusUser: false,
+         language: 'en',
+         verified: false } }
+        </code>
+        <p>
+            We can then take that user info and save it to our database and expand on it.
+        </p>
+        <h2>PASSPORT</h2>
+        Authentication Middleware Library
+        -An npm package that is basically authentication middleware. It simplifies the amount of code that we have to
+        write and it basically
+        handles a lot of the interaction between our application and the 3rd partly service, in this case Google…so
+        those arrows between our server app and google or facebook or whoever is handled by passport
+
+        <img style="margin-top: 25px; width:100%;" src="/assets/img/Passport.png">
+        <img style="width:100%; margin-bottom: 25px;" src="/assets/img/OAuth2.png">
+        <h1>Twilio</h1>
+        <h2>ACCT SID, AUTH TOKEN</h2>
+        <ul>
+            <li>Go to Twilio, Sign UP</li>
+            <li>Get a Phone Number</li>
+            <li>Get Your ACCT SID, AUTH TOKEN</li>
+            <li>npm install</li>
+            <li>About 10 lines of code!</li>
+        </ul>
+
+        <img style="margin-top: 25px; width:100%;" src="/assets/img/TwilioCode.png">
+        <img style="width:100%;" src="/assets/img/TwilioFlow.png">
+    </div>
 
 
-
-
-
-
-    
     <footer>
         <% include ../partials/footer %>
     </footer>
