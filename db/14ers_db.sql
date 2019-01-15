@@ -15,6 +15,7 @@ CREATE TABLE mountains(
 );
 
 CREATE TABLE mountain_routes
+
 (
 	foreignKey INT(10) NOT NULL,
 	routeNumber INT(10) NOT NULL,

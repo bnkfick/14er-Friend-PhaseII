@@ -16,8 +16,8 @@
   "bugs": {
     "url": "https://github.com/bnkfick/14er-Friend-PhaseII/issues"
   },
-  "homepage": "https://github.com/bnkfick/14er-Friend-PhaseII#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "cookie-session": "^2.0.0-beta.3",
     "dotenv": "^6.2.0",
     "ejs": "^2.6.1",

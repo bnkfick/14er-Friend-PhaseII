@@ -1,18 +1,17 @@
 <!--Login and Preferences-->
 <!--Hidden Until Signed In-->
-<%=userProf%>
-<section id="user-info" class="mt-8 spec-text">    
-    <div class="container glass">
-        <div id="user-info-box" class="row align-items-center justify-content-end">
+   
+    <div id="user-info" class="container glass spec-text">
+        <div id="user-info" class="row align-items-center justify-content-end partial-header mt-4">
             <div class="col-11">
                 <!-- Insert First name into h4? -->
                 <h4 class="ls-25 mb-0">Your Info</h4>
             </div>
             <div class="col-1 text-right">
-                <i id="user-info-btn" role="button" class="fas  fa-plus-square fa-minus-square fa-2x"></i>
+                <i id="toggle-user-info-btn" role="button" class="fas  fa-plus-square fa-minus-square fa-2x"></i>
             </div>
         </div>
-        <div id="preference-box" class="mt-5">
+        <div id="user-info-box" class="mt-5">
             <form>
                 <!--User Name, Address, Phone, Profile Pic, Change Password, Notification Preferences (Email, Text, Both)-->
                 <!--Social Media: Create Group. Add/invite friends to Group communication.  Link Facebook, Twitter, Instagram-->
@@ -71,36 +70,12 @@
                         </div>
                     </div>
                 </div>
-                    <div class="row align-items-center justify-content-end mt-5">
-                        <div class="col-11">
-                                <h4 class="ls-25 mb-0">Your Interests</h4>
-                        </div>
-                        <div class="col-1 text-right">
-                                <i id="interests-btn" role="button" class="fas  fa-plus-square fa-minus-square fa-2x"></i>
-                            </div>
-                            
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-3">Day Hiking</div>
-                        <div class="col-3">Backpacking</div>
-                        <div class="col-3">Roped Mountaineering</div>
-                        <div class="col-3">Big Wall Climbing</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3">Ski Mountaineering</div>
-                        <div class="col-3">Ice Climbing</div>
-                        <div class="col-3">Backcountry Huts</div>
-                        <div class="col-3">High Altitude Training</div>
-                    </div>
-                
-
                 <div class="form-group row mt-5">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-8">
-                        <button id="profile-submit-btn" data-userid="<%=user.id%>" class="btn btn-outline-light" type="submit">Save</button>
+                        <button id="profile-submit-btn" data-userid="<%=user.id%>" class="btn btn-outline-light submit-btn mb-5" type="submit">Save</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
-</section>

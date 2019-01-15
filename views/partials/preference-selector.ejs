@@ -1,8 +1,7 @@
 <!--Login and Preferences-->
-<!--Hidden Until Signed In-->
-<section id="preferences" class="mt-8 spec-text">    
-    <div class="container glass">
-        <div id="toggle-preference-box" class="row align-items-center justify-content-end">
+<!--Hidden Until Signed In-->  
+    <div id="preferences" class="container glass spec-text">
+        <div id="toggle-preference-box" class="row align-items-center justify-content-end partial-header">
             <div class="col-11">
                 <!-- Insert First name into h4? -->
                 <h4 class="ls-25 mb-0">Climbing Condition Preferences</h4>
@@ -76,7 +75,7 @@
                             userid = user.id;
                         }
                         %>    
-                        <button id="preferences-submit-btn" data-userid="<%=userid%>"  class="btn btn-outline-light" type="submit">Save</button>
+                        <button id="preferences-submit-btn" data-userid="<%=userid%>"  class="btn btn-outline-light submit-btn mb-5" type="submit">Save</button>
                     </div>
                 </div>
                 
@@ -136,4 +135,3 @@
             </form>
         </div>
     </div>
-</section>
