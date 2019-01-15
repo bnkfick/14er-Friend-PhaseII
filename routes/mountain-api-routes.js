@@ -65,7 +65,7 @@ app.get("/api/distances/", function(req, res) {
 						// console.log(dist);
 						distances.push(dist);
 						resolve(true);
-						console.log(distances);
+						//console.log(distances);
 					} else {
 						// console.log(distance);
 						// console.log(target);
@@ -77,14 +77,14 @@ app.get("/api/distances/", function(req, res) {
 						// console.log(dist);
 						distances.push(dist);
 						resolve(true);
-						console.log(distances);
+						//console.log(distances);
 					};
 				}).catch((error) => {
 					console.log(error);
 				});
 			});
 		})).then(function(resolved) {
-			console.log("distances", distances);
+			//console.log("distances", distances);
 			res.json(distances);
 		})
 

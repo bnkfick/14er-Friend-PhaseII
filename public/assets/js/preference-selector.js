@@ -336,12 +336,15 @@ $(function () {
 
 $("document").ready(function(){
 
-    var userid = $("#profile-submit-btn").data("userid");
-    console.log("READY");
+    var userid = $("#preferences-submit-btn").data("userid");
     console.log(userid);
 
     $.get("/api/user/preferences/" + userid, function (data) {
         console.log("preferences " + data);
+        $("#min-temp-slider").val(75);
+        $("#max-wind-slider").val(75);
+        $("#max-precip-slider").val(75);
+        $("#max-dist-slider").val(75);
     });
     $.get("/api/user/profile/" + userid, function (data) {
         console.log(data);

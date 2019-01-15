@@ -47,7 +47,20 @@
                         </div>
                     </div>
                     
-                    
+                    <% 
+                    var userid = " ";
+                    if (typeof user === 'undefined') { 
+                        userid = " ";
+                        console.log("USER Profile user IS UNDEFINED");
+                    } else {
+                        userid = user.id;
+                        console.log("USER Profile user IS DEFINED");
+                        console.log(user);
+                        console.log(user.id);
+                        console.log(userid);
+                        console.log(user.user_name);
+                    }
+                    %>
                     <div class="col-md-6">
                         <!-- GET CSS AND JS HERE: https://bootsnipp.com/snippets/eNbOa -->
                         <div class="form-group row">

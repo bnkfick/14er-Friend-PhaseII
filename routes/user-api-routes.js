@@ -50,12 +50,12 @@ module.exports = function (app) {
             thumbnail: req.user.thumbnail
         };
         Promise.all([
-            currUser,
+            user,
             get(`http://localhost:${PORT}/api/user/profile/${req.user.id}`),
             get(`http://localhost:${PORT}/api/user/preferences/${req.user.id}`),
-        ]).then(([currUser, userProf, userPref]) =>
+        ]).then(([user, userProf, userPref]) =>
             res.render('pages/climber-settings', {
-                user: currUser, 
+                user: user, 
                 userProf: userProf, 
                 userPref: userPref
             }))
@@ -142,6 +142,7 @@ module.exports = function (app) {
     });
 
     app.get("/api/user/preferences/:userid", function (req, res) {
+        console.log(req.params.user.id);
         db.UserPreference.findOne({
             where: {
                 UserId: req.params.userid
