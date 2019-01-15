@@ -1,0 +1,14 @@
+.interests-btn {
+    min-width: 15rem;
+    min-height: 3.25rem;
+    padding-top: 0.5rem;
+    border-radius: 5px;
+}
+
+.interests-btn:hover {
+    cursor: pointer;
+}
+
+#interest-box .slider.slider-horizontal {
+    width: 25rem;
+}
