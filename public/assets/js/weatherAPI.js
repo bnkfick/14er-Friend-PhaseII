@@ -26,7 +26,7 @@ $("document").ready(function(){
 
             //Render weather to tables
             $("#mtn-"+target+">tbody>.conditions>.windspeed").text(times[0].windSpeed);
-            $("#mtn-"+target+">tbody>.conditions>.temperature").text(times[0].temperature + " F");
+            $("#mtn-"+target+">tbody>.conditions>.temperature").text(times[0].temperature + String.fromCharCode(176) + " F");
             $("#mtn-"+target+">tbody>.conditions>.wind-direction").text(times[0].windDirection);
             $("#mtn-"+target+">tbody>.conditions>.short-forecast").text(times[0].shortForecast);
             
