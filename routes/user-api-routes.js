@@ -166,22 +166,22 @@ module.exports = function (app) {
             if (data) {
 
 
-                console.log(newUserPref);
+                //console.log(newUserPref);
                 db.UserPreference.update({
                     windLimit: req.body.windLimit,
-                    precipLimit: newUserPref.precipLimit,
+                    precipLimit: newUserPref.pgrecipLimit,
                     tempMin: newUserPref.tempMin,
                     distMax: newUserPref.distMax
                 }, {
                         where: {
-                            id: req.params.userid
+                            UserId: req.params.userid
                         }
                     })
                     .then(function (result) {
                         if (result.changedRows == 0) {
                             return res.status(404).end();
                         } else {
-                            console.log(`Updated User Preferences:  ${data}`);
+                            //console.log(`Updated User Preferences:  ${data}`);
                             res.json(result);
                         }
                     });
@@ -198,7 +198,7 @@ module.exports = function (app) {
                         distMax: newUserPref.distMax
                     }
                 ).then(function (data) {
-                    console.log(`New User Preferences created:  ${data}`);
+                    //console.log(`New User Preferences created:  ${data}`);
                 });
             }
 

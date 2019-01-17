@@ -71,7 +71,9 @@ $(function () {
         handle: "square",
     });
 
-    $(`#min-temp-box`).on(`slide`, function () {
+
+
+    $(`#min-temp-box`).on("slide", function () {
         //Crux was to set data-value of parent to easily 'find' children
         var value = parseInt($(this).find(`input`).val());
         var resetTicks = $(this).find(`.slider-tick`).css("background", "#F7F7F7");
@@ -122,7 +124,7 @@ $(function () {
         };
     })
     //Fully custom CSS transformation based on value
-    $(`#max-wind-box, #max-precip-box`).on(`slide`, function () {
+    $(`#max-wind-box, #max-precip-box`).on("slide", function () {
         //Crux was to set data-value of parent to easily 'find' children
         var value = parseInt($(this).find(`input`).val());
         var resetTicks = $(this).find(`.slider-tick`).css("background", "#F7F7F7");
@@ -266,7 +268,7 @@ $(function () {
             data: newUserPref
         }).then(
             function (data) {
-                console.log(data);
+                //console.log(data);
                 console.log("changed user preferences", newUserPref);
             }
         );
@@ -334,20 +336,24 @@ $(function () {
     });
 });
 
+
+
 $("document").ready(function(){
 
     var userid = $("#preferences-submit-btn").data("userid");
-    console.log(userid);
+    //console.log(userid);
 
     $.get("/api/user/preferences/" + userid, function (data) {
-        console.log(`preferences ${data}`);
-        //$("#min-temp-slider").val(75);
-        //$("#max-wind-slider").val(75);
-        //$("#max-precip-slider").val(75);
-        //$("#max-dist-slider").val(75);
+        //console.log(data);
+        
+        $("#min-temp-slider").slider('setValue', data.tempMin, true);
+        $("#max-wind-slider").slider('setValue', data.windLimit, true);
+        $("#max-precip-slider").slider('setValue', data.precipLimit, true);
+        $("#max-dist-slider").slider('setValue', data.distMax, true);
+
     });
     $.get("/api/user/profile/" + userid, function (data) {
-        console.log(`profile ${data}`);
+        //console.log(`profile ${data}`);
         if (data) {
             $("#fname-input").val(data.firstname);
             $("#lname-input").val(data.lastname);
