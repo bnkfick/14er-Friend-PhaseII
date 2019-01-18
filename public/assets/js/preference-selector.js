@@ -73,7 +73,7 @@ $(function () {
 
 
 
-    $(`#min-temp-box`).on("slide", function () {
+    $(`#min-temp-box`).on("slide slideStop", function () {
         //Crux was to set data-value of parent to easily 'find' children
         var value = parseInt($(this).find(`input`).val());
         var resetTicks = $(this).find(`.slider-tick`).css("background", "#F7F7F7");
@@ -124,7 +124,7 @@ $(function () {
         };
     })
     //Fully custom CSS transformation based on value
-    $(`#max-wind-box, #max-precip-box`).on("slide", function () {
+    $(`#max-wind-box, #max-precip-box`).on("slide slideStop", function () {
         //Crux was to set data-value of parent to easily 'find' children
         var value = parseInt($(this).find(`input`).val());
         var resetTicks = $(this).find(`.slider-tick`).css("background", "#F7F7F7");
@@ -175,7 +175,7 @@ $(function () {
         };
     })
 
-    $(`#max-dist-box`).on(`slide`, function () {
+    $(`#max-dist-box`).on("slide slideStop", function () {
         //Crux was to set data-value of parent to easily 'find' children
         var value = parseInt($(this).find(`input`).val());
         var resetTicks = $(this).find(`.slider-tick`).css("background", "#F7F7F7");

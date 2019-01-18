@@ -169,7 +169,7 @@ module.exports = function (app) {
                 //console.log(newUserPref);
                 db.UserPreference.update({
                     windLimit: req.body.windLimit,
-                    precipLimit: newUserPref.pgrecipLimit,
+                    precipLimit: newUserPref.precipLimit,
                     tempMin: newUserPref.tempMin,
                     distMax: newUserPref.distMax
                 }, {

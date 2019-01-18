@@ -80,6 +80,17 @@ $(function () {
         }
     } 
 
+    $(".container").on("click", ".favorite", function () {
+        var mtnId = $(this).closest('table').attr("id");
+        
+        
+        if ($(this).attr("value") === "false") {
+            $(this).removeClass("far").addClass("fas").attr("value", "true");
+        } else {
+            $(this).removeClass("fas").addClass("far").attr("value", "false");
+        }
+    });
+
     // Function Calls====================================
     styleRouteExposure();
     styleDifficulty();
