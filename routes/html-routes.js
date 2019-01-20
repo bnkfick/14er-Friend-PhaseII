@@ -51,6 +51,7 @@ module.exports = function (app) {
       get(`http://localhost:${PORT}/api/mountain_routes`),
     ]).then(([user, mtns, trails]) =>
       res.render('pages/index', {
+        url: "/",
         user: currUser,
         mtns: mtns,
         trails: trails
@@ -60,7 +61,7 @@ module.exports = function (app) {
 
   //Page Views=========================================================
   app.get('/climber-settings', function (req, res) {
-    console.log("++++++++++++++++++++++++++++++++");
+
 
     var currUser;
     if ( req.user ) {
@@ -80,7 +81,10 @@ module.exports = function (app) {
       };
     }
 
-    res.render('pages/climber-settings', { user: currUser });
+    res.render('pages/climber-settings', { 
+      url: "climber-settings", 
+      user: currUser 
+    });
   })
 
   //Tap the mountain-api-routes with :name

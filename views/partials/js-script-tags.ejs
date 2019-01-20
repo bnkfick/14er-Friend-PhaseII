@@ -31,19 +31,29 @@
     <!-- Custom JS -->
     <!-- <script type="text/javascript" src="assets/js/admin-view.js"></script> -->
     <!-- <script type="text/javascript" src="assets/js/application.js"></script> -->
-    <script type="text/javascript" src="assets/js/googleMapAPI.js"></script>
+
     <!-- <script type="text/javascript" src="assets/js/mtn-routes-table.js"></script> -->
     <script type="text/javascript" src="assets/js/mtn-table.js"></script>
     <script type="text/javascript" src="assets/js/user-info.js"></script>
     <script type="text/javascript" src="assets/js/preference-selector.js"></script>
-    <!-- <script type="text/javascript" src="assets/js/weatherAPI.js"></script> -->
-
-
-
+    <% 
+    if (typeof url !== 'undefined') { 
+        if (url === '/') {
+            %>
+    <script type="text/javascript" src="assets/js/googleMapAPI.js"></script>
+    <script type="text/javascript" src="assets/js/weatherAPI.js"></script>
+            <%
+         } else if (url === "climber-settings"){
+             %>
+    <script type="text/javascript" src="assets/js/preference-loader.js"></script>
+    <script type="text/javascript" src="assets/js/interest-selector.js"></script>
+            <%
+         }
+    console.log(`URL ${url}`);
+    } 
+    %>  
 
     <!-- <script type="text/javascript" src="assets/javascript/mountain-view.js"></script> -->
     <!-- <script type="text/javascript" src="assets/javascript/routes-view.js"></script> -->
-    <script type="text/javascript" src="assets/js/googleMapAPI.js"></script>
-    <script type="text/javascript" src="assets/js/interest-selector.js"></script>
-    <script type="text/javascript" src="assets/js/weatherAPI.js"></script>
+
     
