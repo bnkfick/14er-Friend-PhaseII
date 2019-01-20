@@ -59,33 +59,7 @@ module.exports = function (app) {
       .catch(err => res.send(err))
   });
 
-  //Page Views=========================================================
-  app.get('/climber-settings', function (req, res) {
-
-
-    var currUser;
-    if ( req.user ) {
-      console.log(req.user);
-    }
-    else {
-      console.log("no current user");
-    }
-    if ( req.user ) {
-      currUser = {
-        id: req.user.id,
-        user_name: req.user.user_name,
-        password: req.user.password,
-        email: req.user.email,
-        google_id: req.user.google_id,
-        thumbnail: req.user.thumbnail
-      };
-    }
-
-    res.render('pages/climber-settings', { 
-      url: "climber-settings", 
-      user: currUser 
-    });
-  })
+  
 
   //Tap the mountain-api-routes with :name
   app.get('/mountain/', (req, res) => {

@@ -56,6 +56,7 @@ module.exports = function (app) {
             get(`http://localhost:${PORT}/api/user/preferences/${req.user.id}`),
         ]).then(([user, userProf, userPref]) =>
             res.render('pages/climber-settings', {
+                url: "climber-settings", 
                 currUser:currUser,
                 user: req.user, 
                 userProf: userProf, 
@@ -63,7 +64,6 @@ module.exports = function (app) {
             }))
             .catch(err => res.send(err))
     })
-
 
     app.get("/api/user/profile/:userid", function (req, res) {
         db.UserProfile.findOne({
@@ -153,7 +153,6 @@ module.exports = function (app) {
             res.json(data);
         });
     });
-
 
     app.post("/api/user/preferences/:userid", function (req, res) {
         var newUserPref = req.body;
