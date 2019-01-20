@@ -12,7 +12,7 @@ $(function () {
         }
 
         var mtnID = $(this).find(`i`).attr("id");
-        console.log(mtnID);
+        //console.log(mtnID);
 
         $(`#${mtnID}-routes`).slideToggle(500, "swing", function () { 
         });
@@ -28,7 +28,7 @@ $(function () {
             $(this).find(`i`).addClass("fa-map-marked-alt");
         }
         var routeID = $(this).find(`i`).attr("id");
-        console.log(routeID)
+        //console.log(routeID)
         
         $(`#${routeID}-beta`).slideToggle(500, "swing", function () {  
         });
